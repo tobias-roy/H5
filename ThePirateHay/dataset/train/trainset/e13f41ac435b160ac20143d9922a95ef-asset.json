@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpeg",
+        "id": "e13f41ac435b160ac20143d9922a95ef",
+        "name": "Cruise_20.jpeg",
+        "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_20.jpeg",
+        "size": {
+            "width": 600,
+            "height": 416
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "Gl4Iucj0Gh",
+            "type": "RECTANGLE",
+            "tags": [
+                "Cruiseship"
+            ],
+            "boundingBox": {
+                "height": 395.1236230110159,
+                "width": 588.8040712468194,
+                "left": 9.16030534351145,
+                "top": 13.10342717258262
+            },
+            "points": [
+                {
+                    "x": 9.16030534351145,
+                    "y": 13.10342717258262
+                },
+                {
+                    "x": 597.9643765903307,
+                    "y": 13.10342717258262
+                },
+                {
+                    "x": 597.9643765903307,
+                    "y": 408.2270501835985
+                },
+                {
+                    "x": 9.16030534351145,
+                    "y": 408.2270501835985
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}
