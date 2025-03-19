@@ -2,9 +2,13 @@
 
 using ThePirateHayConsole50Epocs;
 using Microsoft.ML.Data;
+using System;
+using System.IO;
+using Microsoft.ML;
 
 // Create single instance of sample data from first line of dataset for model input.
 var image = MLImage.CreateFromFile(@"C:\Users\tobia\source\repos\H5\ThePirateHay\dataset\train\trainset\Container Ship_9.jpeg");
+
 MLModel1.ModelInput sampleData = new MLModel1.ModelInput()
 {
     Image = image,
@@ -27,3 +31,85 @@ foreach (var item in boxes)
     Console.WriteLine($"XTop: {item.Box.XTop},YTop: {item.Box.YTop},XBottom: {item.Box.XBottom},YBottom: {item.Box.YBottom}, Score: {item.Score}");
 }
 
+// Convert the model to ONNX format
+string mlnetModelPath = "C:/Users/tobia/source/repos/H5/ThePirateHay/MLModel1.mlnet";
+string onnxModelPath = "model.onnx";
+ModelConverter.ConvertModelToOnnx(mlnetModelPath, onnxModelPath);
+
+public static class ModelConverter
+{
+    public static void ConvertModelToOnnx(string mlnetModelPath, string outputOnnxPath)
+    {
+        Console.WriteLine($"Starting conversion of {mlnetModelPath} to ONNX format...");
+
+        try
+        {
+            // Create MLContext
+            var mlContext = new MLContext();
+
+            // Load the existing ML.NET model
+            ITransformer loadedModel;
+            DataViewSchema inputSchema;
+            Console.WriteLine("Loading ML.NET model...");
+            using (var stream = new FileStream(mlnetModelPath, FileMode.Open))
+            {
+                loadedModel = mlContext.Model.Load(stream, out inputSchema);
+            }
+            Console.WriteLine("Model loaded successfully.");
+
+            // Print schema information
+            Console.WriteLine("Input schema columns:");
+            foreach (var column in inputSchema)
+            {
+                Console.WriteLine($"- {column.Name}: {column.Type}");
+            }
+
+            // Create a temporary dataset to use for prediction
+            byte[] dummyImageData = new byte[10 * 10 * 3]; // Small 10x10 RGB image
+            string tempImagePath = "dummy_image.jpg";
+            File.WriteAllBytes(tempImagePath, dummyImageData);
+
+            // Create some example data
+            var data = new List<ImageData>
+            {
+                new ImageData { ImagePath = tempImagePath }
+            };
+
+            // Load the data
+            var dataView = mlContext.Data.LoadFromEnumerable(data);
+
+            // Configure the prediction pipeline
+            var imageLoadingEstimator = mlContext.Transforms.LoadImages(
+                outputColumnName: "Image",
+                imageFolder: "",
+                inputColumnName: nameof(ImageData.ImagePath));
+
+            // Fit the image loading estimator
+            Console.WriteLine("Preparing transformation pipeline...");
+            var imageLoadingTransformer = imageLoadingEstimator.Fit(dataView);
+
+            // Apply the image loading transformer
+            var transformedData = imageLoadingTransformer.Transform(dataView);
+
+            // Create the final transformer by combining the image loading transformer and the loaded model
+            var finalPipeline = new TransformerChain<ITransformer>(
+                new ITransformer[] { imageLoadingTransformer, loadedModel });
+
+            // Export the model to ONNX format
+            using (var stream = new FileStream(outputOnnxPath, FileMode.Create))
+            {
+                mlContext.Model.ConvertToOnnx(finalPipeline, transformedData, stream);
+            }
+            Console.WriteLine($"Model successfully converted to ONNX format and saved to {outputOnnxPath}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error during conversion: {ex.Message}");
+        }
+    }
+
+    public class ImageData
+    {
+        public string ImagePath { get; set; }
+    }
+}
