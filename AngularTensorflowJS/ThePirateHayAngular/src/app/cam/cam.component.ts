@@ -12,45 +12,65 @@ import {Router} from '@angular/router';
 })
 export class CamComponent implements OnInit {
   constructor(private router: Router) {
+    console.log('CamComponent constructor');
   }
-
+  public loading: boolean = true;
   videoStream: any;
   videoRef: any;
   modelCOCOSSD: any;
 
-  async ngOnInit() {}
+  async ngOnInit() {
+    console.log('ngOnInit');
+  }
 
   async ngAfterViewInit() {
+    console.log('ngAfterViewInit');
     this.videoRef = document.getElementById('video');
+    console.log('videoRef:', this.videoRef);
     await this.startCamera();
-    await tf.setBackend('webgl'); // Set the backend to 'webgl'
-    await tf.ready(); // Ensure the backend is ready
+    console.log('Camera started');
+    await tf.setBackend('webgl');
+    console.log('TensorFlow backend set to webgl');
+    await tf.ready();
+    console.log('TensorFlow ready');
     await this.loadModel();
+
   }
 
   async startCamera() {
+    console.log('startCamera');
     navigator.mediaDevices.getUserMedia({
       video: { width: 640, height: 480 },
       audio: false
     }).then(stream => {
+      console.log('getUserMedia stream:', stream);
       this.videoStream = stream;
       if (this.videoRef != null) {
         this.videoRef.srcObject = this.videoStream;
         this.videoRef.onloadedmetadata = () => {
+          console.log('videoRef onloadedmetadata');
           this.videoRef.play();
         };
       }
+    }).catch(error => {
+      console.error('Error accessing media devices.', error);
     });
   }
 
   async loadModel() {
+    console.log('loadModel');
     this.modelCOCOSSD = await cocoSSD.load();
+    console.log('Model loaded starting detection');
+    this.loading = false;
+    console.log('Loading set to false');
     this.detectFrame(this.videoRef, this.modelCOCOSSD);
   }
 
   detectFrame = async (video: any, model: any) => {
+    console.log('detectFrame');
     if (video.videoWidth > 0 && video.videoHeight > 0) {
       const predictions = await model.detect(video);
+      console.log('Predictions:', predictions);
       this.renderPredictions(predictions);
       requestAnimationFrame(() => {
         this.detectFrame(video, model);
@@ -63,6 +83,7 @@ export class CamComponent implements OnInit {
   }
 
   renderPredictions = (predictions: any[]) => {
+    console.log('renderPredictions');
     const canvas = <HTMLCanvasElement>document.getElementById("canvas");
     const ctx = <CanvasRenderingContext2D>canvas.getContext("2d");
 
@@ -99,8 +120,12 @@ export class CamComponent implements OnInit {
   }
 
   GoToHome() {
+    console.log('GoToHome');
     this.videoRef.pause();
-    this.videoStream.getTracks().forEach((track: any) => {track.stop()});
+    this.videoStream.getTracks().forEach((track: any) => {
+      console.log('Stopping track:', track);
+      track.stop();
+    });
     this.router.navigate(['/']);
   }
 }

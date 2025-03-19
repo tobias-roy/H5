@@ -70,9 +70,9 @@
     "Version": 0,
     "Type": "ObjectDetectionTrainingOption",
     "TrainingTime": 0,
-    "Epoch": 50,
-    "ScoreThreshold": 0.9,
-    "IOUThreshold": 0.8,
+    "Epoch": 5,
+    "ScoreThreshold": 0.35,
+    "IOUThreshold": 0.5,
     "ValidationOption": {
       "Version": 0,
       "Type": "TrainValidateSplitValidationOption",

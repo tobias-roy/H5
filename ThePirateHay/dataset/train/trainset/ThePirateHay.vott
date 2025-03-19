@@ -5,7 +5,7 @@
         "name": "Trainset",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZTAxYTVlZGE3MmEwNzJhMDY0MTYxZjU2Njg0MzU3ZGM1NTFjMTdlYmIwNGE5ZTUyYjAxMWIzZDY3MDQ3NzJhYWM2ZjM5ZmUwNGQ3YjIxOTNjODMyYmZjODBmYmUxYTI5YTFiYzdmYjllNDI3ZTVjY2I0Y2Q0MjIxOTE3ZmYzMzIxMzk4MTUyOTViM2ExZTMxODFjYzI5ZWI3ZDRlNmUzYjdiNTEzNmY1NTUxNmE5OWY4NmUxNTA0NWY2NGExOTA0IiwiaXYiOiIyYjI5MGIxMzQ5NjM2N2FjNGE1YjU2NmY2MWQxNTUyMmI3Mzg2YTUwMzBhNzhiZGQifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjI0ZTU2YTBlYjY0ZmQ5ZWY1OTc4MWIxYjczODRkZDc3ZGU4ZWYwMjI3ZTk0NGNlODEyOTAzYTY2OTlkZDAxYjFlZGZiMGUzZDRiN2RmMDI1YjUzMjdiN2JmMDQwZDZjYWE1NTQ5YzNhOWFjZDhkZjIyNjUzMzQxOGI3MzQzYjhiMThmODhmYTlmNmYxNGY2NGFhYmJkNDY0ZDg1NDIzOGYwNzk1MjAzYTI3OWU0ODU0MTVjMjNjMGZkMmY3NDRiIiwiaXYiOiI1Y2E1ZjMxMTlkNDRiMTY4NjU1ZDhjM2YzYTQ1YmMxZDhmZDcxNzYwYjgzZDYxMTMifQ=="
         },
         "id": "lc7-irAHji"
     },
@@ -13,7 +13,7 @@
         "name": "Trainset",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMjhlZjI2M2JjOTgzNTZkOGMzOTdiNjUwZjIzMzQ1ZmE2N2JmYzUwN2MzNDUwMmVkNTFjZTc4NmFjZTUxZTUyMmM4OGQyN2I0MTQxYTFlMjY0ZTFjMTI4ZjU2NTRlNzM1MWIxYjFlNGMyYTM5M2ExYTJlNDA1ZGUzZWM2ZjZkNzk4NDI4ZjE5YTdmNGU3YTc0MGU3MGM3ZjQ5ODRjNzU0ZWZjOWU1ZjE3NTY0NzFjMWY0ZGIxZWU0ZWEyNjBlMThkIiwiaXYiOiJjOGY4NTcxZDY3Yjc2ZmM1MzZkYTM4MDg2NTZiNGExMTQ3YWU1NzljNmZjZDlkNjgifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiOTExNzgzZDk4NWFmMTk2N2ZjZWVjZjAwMTVhYmE1ZjM2MGRjMWYwZWY4NGUxNTU2MWI4ZWM3NTE3MjczZTk3MDU4NmM5YjIwN2U5ZDQwYjQ2NTgwYzczNDJhOTk4YzcxMzVmZjEwNmY2YWUwODA4YTU4OWUzMWUyYTNhYmFmOWE5ZWQwNTQwMDU3NmU1YjY4NzRlNzE5ZTk2MmUxMWU2ODM1NjM1ZDFiNzlhNjkyMmY5MWE0ZmFlMTA3NGRkNjk2IiwiaXYiOiI5ZTZjNjAyMDRhZDk1YmE2NDJjNmE4OTg0NWFkODMyZjMyM2RkZDk4YjAyNTMzYzAifQ=="
         },
         "id": "lc7-irAHji"
     },
@@ -53,17 +53,17 @@
     "id": "D9E0XXF0tU",
     "activeLearningSettings": {
         "modelPathType": "coco",
-        "autoDetect": true,
-        "predictTag": true
+        "autoDetect": false,
+        "predictTag": false
     },
     "exportFormat": {
         "providerType": "vottJson",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZDdkN2U4ZGY1MWI1MDk1NmU4MGQ3Y2Y2M2NlYjFlN2ZlN2JiMDY5OWY3YjM1MGVlNDViY2RlYmI0N2I1YzU3Yzg3NWVkMWE3NjI0ZTJhZTM2ZWI1MGZkMzNmZGI4MmE0IiwiaXYiOiIyYjk4ODI1NjRmNjk0ZmJhMmJlMWNjZDViOTM4MTU4ZmI1ZmU1MzA3NDVkNGM2MDcifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMzQ5Y2JmNjFiNmM5NjljNjZmNWIxMjVlYjAxMTJiMWMwZDJjOGNmODZmNjQwNjU2ODRlNjYyNGZiZTBmOWQ2YTI0OGFhNWYxMzhjNWE0MDU5NjY0NDRkZDdmNDlkMGM1IiwiaXYiOiJiMTFjMTNjMGNiMzlmN2M2YmIwNWI4NjQ1OGZiNThhNzQxYTc2NzliYjlhNTNkOGYifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "b8cd8e8beab8ae7b1e0ad357ad3a7fa1",
+    "lastVisitedAssetId": "fb48118b532dd1111a77765c8b4c39ad",
     "assets": {
         "2e3ef0abb3aa043be8a364e0ef46fed2": {
             "format": "jpeg",
@@ -2187,7 +2187,7 @@
                 "width": 600,
                 "height": 416
             },
-            "state": 2,
+            "state": 1,
             "type": 1
         },
         "93eca0167086a156ebe867ca51616189": {
@@ -2199,8 +2199,9 @@
                 "width": 600,
                 "height": 416
             },
-            "state": 2,
-            "type": 1
+            "state": 1,
+            "type": 1,
+            "predicted": true
         },
         "81d0a0e1ceeea182c49b9476ff96a124": {
             "format": "jpeg",
@@ -2236,7 +2237,8 @@
                 "height": 416
             },
             "state": 1,
-            "type": 1
+            "type": 1,
+            "predicted": true
         },
         "5706c6644f7e3baeeccd1ea69100796c": {
             "format": "jpeg",
@@ -2259,7 +2261,7 @@
                 "width": 600,
                 "height": 416
             },
-            "state": 2,
+            "state": 1,
             "type": 1,
             "predicted": true
         },
@@ -2272,8 +2274,9 @@
                 "width": 600,
                 "height": 416
             },
-            "state": 2,
-            "type": 1
+            "state": 1,
+            "type": 1,
+            "predicted": true
         },
         "4a8c16f690148967ce6a4455696bb098": {
             "format": "jpeg",
@@ -2284,8 +2287,9 @@
                 "width": 600,
                 "height": 416
             },
-            "state": 2,
-            "type": 1
+            "state": 1,
+            "type": 1,
+            "predicted": true
         },
         "fb48118b532dd1111a77765c8b4c39ad": {
             "format": "jpeg",
@@ -2297,7 +2301,8 @@
                 "height": 416
             },
             "state": 2,
-            "type": 1
+            "type": 1,
+            "predicted": true
         },
         "846e6ae95002c68bf90ed211a953f83b": {
             "format": "jpeg",

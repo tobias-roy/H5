@@ -47,8 +47,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "37570fc3973d1c318c76eca14a76f927",
-                "name": "Container%20Ship_9.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_9.jpeg",
+                "name": "Container_20Ship_9.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_9.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -97,7 +97,7 @@
                 "format": "jpeg",
                 "id": "23b9cba6e906ed0e5515570ea58184bd",
                 "name": "Submarine_24.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_24.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_24.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -230,7 +230,7 @@
                 "format": "jpeg",
                 "id": "683bdbe5b2a682435a0fa1eb4b64fb20",
                 "name": "Submarine_22.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_22.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_22.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -370,7 +370,7 @@
                 "format": "jpeg",
                 "id": "787585358c621a58e4e02270bd6a2c19",
                 "name": "Submarine_2.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_2.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_2.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -482,7 +482,7 @@
                 "format": "jpeg",
                 "id": "dbe9138d1ec673995ea071ef64d5eeaf",
                 "name": "Submarine_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_19.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -546,7 +546,7 @@
                 "format": "jpeg",
                 "id": "ed6a3da3a1d27a060b6edef4ea7c3344",
                 "name": "Submarine_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_18.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -562,7 +562,7 @@
                 "format": "jpeg",
                 "id": "f9bbd86d0598dd5750ba1147da94d99f",
                 "name": "Submarine_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_17.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -670,7 +670,7 @@
                 "format": "jpeg",
                 "id": "c4e9b47364d872995c9f9cdb2828722e",
                 "name": "Submarine_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_16.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -790,7 +790,7 @@
                 "format": "jpeg",
                 "id": "81f79ae4f540bf3a886b5b65f0e85206",
                 "name": "Submarine_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_15.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -870,7 +870,7 @@
                 "format": "jpeg",
                 "id": "846e6ae95002c68bf90ed211a953f83b",
                 "name": "Submarine_14.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_14.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_14.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -950,7 +950,7 @@
                 "format": "jpeg",
                 "id": "fb48118b532dd1111a77765c8b4c39ad",
                 "name": "Submarine_13.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_13.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_13.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1070,7 +1070,7 @@
                 "format": "jpeg",
                 "id": "4a8c16f690148967ce6a4455696bb098",
                 "name": "Submarine_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_12.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1158,7 +1158,7 @@
                 "format": "jpeg",
                 "id": "2118be4908c697dfd0e981bb781444fe",
                 "name": "Submarine_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_11.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1238,7 +1238,7 @@
                 "format": "jpeg",
                 "id": "b8cd8e8beab8ae7b1e0ad357ad3a7fa1",
                 "name": "Submarine_10.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_10.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_10.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1326,7 +1326,7 @@
                 "format": "jpeg",
                 "id": "5706c6644f7e3baeeccd1ea69100796c",
                 "name": "Submarine_1.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Submarine_1.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_1.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1434,7 +1434,7 @@
                 "format": "jpeg",
                 "id": "f597ac34b3675de0b631af45234617fc",
                 "name": "Sailboat_7.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_7.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_7.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1450,7 +1450,7 @@
                 "format": "jpeg",
                 "id": "03a8e1f3a0e357781101cc3ea3fc18e0",
                 "name": "Sailboat_5.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_5.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_5.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1466,7 +1466,7 @@
                 "format": "jpeg",
                 "id": "81d0a0e1ceeea182c49b9476ff96a124",
                 "name": "Sailboat_4.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_4.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_4.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1482,7 +1482,7 @@
                 "format": "jpeg",
                 "id": "93eca0167086a156ebe867ca51616189",
                 "name": "Sailboat_3.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_3.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_3.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1614,7 +1614,7 @@
                 "format": "jpeg",
                 "id": "4b3c837fa44f33c30f35a35d3ce0ebc0",
                 "name": "Sailboat_29.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_29.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_29.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1686,7 +1686,7 @@
                 "format": "jpeg",
                 "id": "fd308d679b05e0de110a7516a0de675c",
                 "name": "Sailboat_28.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_28.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_28.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1754,7 +1754,7 @@
                 "format": "jpeg",
                 "id": "cacf8b78d8fdc35ad51673848ed17507",
                 "name": "Sailboat_21.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_21.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_21.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1770,7 +1770,7 @@
                 "format": "jpeg",
                 "id": "fe4ea057d7e91501039309260b5f6abb",
                 "name": "Sailboat_20.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_20.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_20.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1854,7 +1854,7 @@
                 "format": "jpeg",
                 "id": "0eff80cfcf7c57cc04e648b5bba8858a",
                 "name": "Sailboat_2.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_2.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_2.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -1934,7 +1934,7 @@
                 "format": "jpeg",
                 "id": "fef0da5a86f832a6f646fa43b7795eeb",
                 "name": "Sailboat_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_19.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2026,7 +2026,7 @@
                 "format": "jpeg",
                 "id": "df71924260b549fdf51676c1ab33fa6a",
                 "name": "Sailboat_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_18.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2118,7 +2118,7 @@
                 "format": "jpeg",
                 "id": "925aff138f05d2a9b7b6010b74a14100",
                 "name": "Sailboat_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_17.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2178,7 +2178,7 @@
                 "format": "jpeg",
                 "id": "eb11e83f9ba582ab3c50dea395e01948",
                 "name": "Sailboat_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_16.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2234,7 +2234,7 @@
                 "format": "jpeg",
                 "id": "580293bf6d0ab969e3c84e24f9a1d964",
                 "name": "Sailboat_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_15.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2310,7 +2310,7 @@
                 "format": "jpeg",
                 "id": "653c6e3a4b1e16449724b768c54cea8a",
                 "name": "Sailboat_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_12.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2326,7 +2326,7 @@
                 "format": "jpeg",
                 "id": "50218439c951158bf2d7daac65b02055",
                 "name": "Sailboat_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_11.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2466,7 +2466,7 @@
                 "format": "jpeg",
                 "id": "9ecc384f9d8c8f6af67544443c6d4599",
                 "name": "Sailboat_10.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_10.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_10.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2626,7 +2626,7 @@
                 "format": "jpeg",
                 "id": "c1d08620896e1749d75d4fc5da0908c2",
                 "name": "Sailboat_1.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Sailboat_1.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Sailboat_1.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -2777,8 +2777,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "9c4d6ba1572c0363a73fb2920cfacdcc",
-                "name": "Pirates%20(9).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(9).jpg",
+                "name": "Pirates_20(9).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(9).jpg",
                 "size": {
                     "width": 610,
                     "height": 390
@@ -2957,8 +2957,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "b73dfe6676fafd660fa8b0fa754f54bf",
-                "name": "Pirates%20(8).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(8).jpg",
+                "name": "Pirates_20(8).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(8).jpg",
                 "size": {
                     "width": 1397,
                     "height": 696
@@ -3101,8 +3101,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "9ef5e4134590f27c0b0ea070143a92fd",
-                "name": "Pirates%20(7).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(7).jpg",
+                "name": "Pirates_20(7).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(7).jpg",
                 "size": {
                     "width": 610,
                     "height": 458
@@ -3237,8 +3237,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "cf64e0a26ed65f1a5df61dbfe592b7e0",
-                "name": "Pirates%20(6).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(6).jpg",
+                "name": "Pirates_20(6).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(6).jpg",
                 "size": {
                     "width": 610,
                     "height": 303
@@ -3584,8 +3584,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "dd2b0cf9824698fd5de51514107fb106",
-                "name": "Pirates%20(5).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(5).jpg",
+                "name": "Pirates_20(5).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(5).jpg",
                 "size": {
                     "width": 768,
                     "height": 576
@@ -3776,8 +3776,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "101124eb6a72d3b7633f424dc8bac845",
-                "name": "Pirates%20(4).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(4).jpg",
+                "name": "Pirates_20(4).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(4).jpg",
                 "size": {
                     "width": 602,
                     "height": 400
@@ -3972,8 +3972,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "a44c6bf085af6d380d75ec90d1fc4dfa",
-                "name": "Pirates%20(3).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(3).jpg",
+                "name": "Pirates_20(3).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(3).jpg",
                 "size": {
                     "width": 267,
                     "height": 188
@@ -4120,8 +4120,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "e38f8ba5340e949ba35b9ce6adb07176",
-                "name": "Pirates%20(2).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(2).jpg",
+                "name": "Pirates_20(2).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(2).jpg",
                 "size": {
                     "width": 686,
                     "height": 386
@@ -4220,8 +4220,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "cae24955be5b5ff7cee50fbc0dc73c32",
-                "name": "Pirates%20(14).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(14).jpg",
+                "name": "Pirates_20(14).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(14).jpg",
                 "size": {
                     "width": 300,
                     "height": 195
@@ -4380,8 +4380,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "ac95550e3ddefc21d3678e9a70e347e6",
-                "name": "Pirates%20(13).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(13).jpg",
+                "name": "Pirates_20(13).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(13).jpg",
                 "size": {
                     "width": 960,
                     "height": 620
@@ -4544,8 +4544,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "5feb37007cbba0bc8bc5c2703f847047",
-                "name": "Pirates%20(12).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(12).jpg",
+                "name": "Pirates_20(12).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(12).jpg",
                 "size": {
                     "width": 2000,
                     "height": 1429
@@ -4720,8 +4720,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "03b2f40d92a9eee2be77b2f0077738f9",
-                "name": "Pirates%20(11).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(11).jpg",
+                "name": "Pirates_20(11).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(11).jpg",
                 "size": {
                     "width": 600,
                     "height": 428
@@ -4939,8 +4939,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "c57e2dd033a812374dba3272be506698",
-                "name": "Pirates%20(10).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(10).jpg",
+                "name": "Pirates_20(10).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(10).jpg",
                 "size": {
                     "width": 400,
                     "height": 300
@@ -5083,8 +5083,8 @@
             "asset": {
                 "format": "jpg",
                 "id": "58d613a355474224fedbbe78e098768c",
-                "name": "Pirates%20(1).jpg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(1).jpg",
+                "name": "Pirates_20(1).jpg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(1).jpg",
                 "size": {
                     "width": 610,
                     "height": 455
@@ -5219,8 +5219,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "b6dc095bc6ea2ad8240ee097e897eb68",
-                "name": "Pirates%20(1).jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Pirates%20(1).jpeg",
+                "name": "Pirates_20(1).jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Pirates_20(1).jpeg",
                 "size": {
                     "width": 758,
                     "height": 330
@@ -5328,7 +5328,7 @@
                 "format": "jpeg",
                 "id": "eafd911a9a1afa72911b79654841fba1",
                 "name": "DDG_9.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_9.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_9.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -5492,7 +5492,7 @@
                 "format": "jpeg",
                 "id": "075bd748f92660b29dc8ebdb6f14214c",
                 "name": "DDG_8.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_8.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_8.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -5648,7 +5648,7 @@
                 "format": "jpeg",
                 "id": "2e974ed9389a56e14fae6e2244eaf7cd",
                 "name": "DDG_7.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_7.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_7.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -5792,7 +5792,7 @@
                 "format": "jpeg",
                 "id": "29b4cf394747066e19a267e3a1b5d93f",
                 "name": "DDG_6.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_6.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_6.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -5936,7 +5936,7 @@
                 "format": "jpeg",
                 "id": "afe67fdbd73cb9cfe1a140af1d163422",
                 "name": "DDG_5.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_5.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_5.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6060,7 +6060,7 @@
                 "format": "jpeg",
                 "id": "cdae796a54dba6b92d62f35dea8a61e3",
                 "name": "DDG_4.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_4.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_4.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6184,7 +6184,7 @@
                 "format": "jpeg",
                 "id": "b8e8c9eb730e02f04ce434b207c3018d",
                 "name": "DDG_3.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_3.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_3.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6308,7 +6308,7 @@
                 "format": "jpeg",
                 "id": "3463100c511f28a0e68207dca4b5d306",
                 "name": "DDG_30.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_30.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_30.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6456,7 +6456,7 @@
                 "format": "jpeg",
                 "id": "33e20d995b9bb6efefaf5d6cf9535eaa",
                 "name": "DDG_29.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_29.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_29.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6620,7 +6620,7 @@
                 "format": "jpeg",
                 "id": "dba5be4b3017388dd1a5dd7c5b54d381",
                 "name": "DDG_28.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_28.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_28.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6752,7 +6752,7 @@
                 "format": "jpeg",
                 "id": "fde553b08c16ce5565ed257b25ef3089",
                 "name": "DDG_27.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_27.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_27.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -6920,7 +6920,7 @@
                 "format": "jpeg",
                 "id": "a08cfe496b697be0e0ec635d7568bc2b",
                 "name": "DDG_26.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_26.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_26.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7072,7 +7072,7 @@
                 "format": "jpeg",
                 "id": "8b5b42307cf900137be8e884b457f00b",
                 "name": "DDG_25.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_25.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_25.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7192,7 +7192,7 @@
                 "format": "jpeg",
                 "id": "7a156205c95b9363a452a6a2a0305223",
                 "name": "DDG_24.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_24.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_24.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7300,7 +7300,7 @@
                 "format": "jpeg",
                 "id": "5ef61827fed7ffa6df9f7e04d0fa2c76",
                 "name": "DDG_23.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_23.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_23.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7404,7 +7404,7 @@
                 "format": "jpeg",
                 "id": "c9f5c16dc830c1ec40a08f6ada8be230",
                 "name": "DDG_22.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_22.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_22.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7496,7 +7496,7 @@
                 "format": "jpeg",
                 "id": "1eb1c1efa78b98c20afcb075638316f4",
                 "name": "DDG_21.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_21.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_21.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7644,7 +7644,7 @@
                 "format": "jpeg",
                 "id": "51a40a1388b817c57bc0c2c65013d612",
                 "name": "DDG_20.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_20.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_20.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7756,7 +7756,7 @@
                 "format": "jpeg",
                 "id": "b2a1c73eb07fae57ee96bd6cae86c987",
                 "name": "DDG_2.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_2.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_2.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -7952,7 +7952,7 @@
                 "format": "jpeg",
                 "id": "f0d890cca40b39978004a5bf5b4c8f3a",
                 "name": "DDG_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_19.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8124,7 +8124,7 @@
                 "format": "jpeg",
                 "id": "abda5094333052da1982efe35b5c831f",
                 "name": "DDG_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_18.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8264,7 +8264,7 @@
                 "format": "jpeg",
                 "id": "1b91223190dc31faf56c9cfb237ef61f",
                 "name": "DDG_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_17.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8368,7 +8368,7 @@
                 "format": "jpeg",
                 "id": "814aa518b9daef086cb42effd7bddac0",
                 "name": "DDG_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_16.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8460,7 +8460,7 @@
                 "format": "jpeg",
                 "id": "147a4e9bcebd738cdb03cc1a882ee509",
                 "name": "DDG_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_15.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8696,7 +8696,7 @@
                 "format": "jpeg",
                 "id": "38e5be0dd2d236957e39d796159e3540",
                 "name": "DDG_14.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_14.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_14.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -8928,7 +8928,7 @@
                 "format": "jpeg",
                 "id": "552435fb3855cf1e5448efc5aa493ee0",
                 "name": "DDG_13.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_13.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_13.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9184,7 +9184,7 @@
                 "format": "jpeg",
                 "id": "cc63b0b93af3793e5fcd5e1c62c0efa9",
                 "name": "DDG_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_12.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9360,7 +9360,7 @@
                 "format": "jpeg",
                 "id": "0df0e9497d1716ce06cffecf25b2fc1c",
                 "name": "DDG_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_11.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9564,7 +9564,7 @@
                 "format": "jpeg",
                 "id": "8bdd82d0115531cb26540b9e13625282",
                 "name": "DDG_10.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_10.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_10.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9708,7 +9708,7 @@
                 "format": "jpeg",
                 "id": "95b543d66511761906044ee5020a77bc",
                 "name": "DDG_1.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/DDG_1.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_1.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9856,7 +9856,7 @@
                 "format": "jpeg",
                 "id": "8f69d30e32bf284f5b1d3ece562876fa",
                 "name": "Cruise_9.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_9.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_9.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9904,7 +9904,7 @@
                 "format": "jpeg",
                 "id": "f2d7f3cf96237a8a6b7732ad97c36629",
                 "name": "Cruise_8.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_8.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_8.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -9952,7 +9952,7 @@
                 "format": "jpeg",
                 "id": "1f068f6b0b97ecfe8a5e9f86c28fe74b",
                 "name": "Cruise_7.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_7.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_7.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10000,7 +10000,7 @@
                 "format": "jpeg",
                 "id": "de535b4f700874b2eefe9811569a1ff8",
                 "name": "Cruise_6.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_6.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_6.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10048,7 +10048,7 @@
                 "format": "jpeg",
                 "id": "1e75e00dba0e928ebf1d010171d461c0",
                 "name": "Cruise_5.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_5.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_5.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10096,7 +10096,7 @@
                 "format": "jpeg",
                 "id": "a039c01ba98165835be74cad57bfd7b9",
                 "name": "Cruise_4.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_4.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_4.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10144,7 +10144,7 @@
                 "format": "jpeg",
                 "id": "92ba1d4b08be3559723959bbfbdbfb7d",
                 "name": "Cruise_30.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_30.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_30.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10192,7 +10192,7 @@
                 "format": "jpeg",
                 "id": "39a3d77ca2a41331a2d4f44c138bfdc6",
                 "name": "Cruise_3.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_3.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_3.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10240,7 +10240,7 @@
                 "format": "jpeg",
                 "id": "573ef22b00ce73c28ebc89831d5d7911",
                 "name": "Cruise_28.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_28.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_28.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10288,7 +10288,7 @@
                 "format": "jpeg",
                 "id": "31dfdcc6a0a2ca7cff3cd351815a4dfa",
                 "name": "Cruise_29.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_29.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_29.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10336,7 +10336,7 @@
                 "format": "jpeg",
                 "id": "898b90239c8123bdc2b68e2bcfb820da",
                 "name": "Cruise_27.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_27.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_27.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10384,7 +10384,7 @@
                 "format": "jpeg",
                 "id": "914bcaa55b790c81963f30da9215e095",
                 "name": "Cruise_26.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_26.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_26.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10432,7 +10432,7 @@
                 "format": "jpeg",
                 "id": "9e8f0a82b31e73ac4668985c17e3f1b7",
                 "name": "Cruise_25.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_25.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_25.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10480,7 +10480,7 @@
                 "format": "jpeg",
                 "id": "a00ed44a3878500642b35845cd3483dd",
                 "name": "Cruise_24.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_24.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_24.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10528,7 +10528,7 @@
                 "format": "jpeg",
                 "id": "ae4730da6cb605ad494e302f0d3c2950",
                 "name": "Cruise_23.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_23.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_23.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10576,7 +10576,7 @@
                 "format": "jpeg",
                 "id": "c8a09dad195018faa201d6b460b1293d",
                 "name": "Cruise_22.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_22.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_22.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10624,7 +10624,7 @@
                 "format": "jpeg",
                 "id": "034d6352d829140091ba8edde7fdd2c1",
                 "name": "Cruise_21.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_21.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_21.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10672,7 +10672,7 @@
                 "format": "jpeg",
                 "id": "e13f41ac435b160ac20143d9922a95ef",
                 "name": "Cruise_20.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_20.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_20.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10720,7 +10720,7 @@
                 "format": "jpeg",
                 "id": "9c6e84274e7dfdf3ac24da5e6ab15be4",
                 "name": "Cruise_2.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_2.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_2.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10768,7 +10768,7 @@
                 "format": "jpeg",
                 "id": "cbade902079871783887adfdad55e8dd",
                 "name": "Cruise_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_19.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10816,7 +10816,7 @@
                 "format": "jpeg",
                 "id": "0b37643c9661007d2d36d685aefc6f70",
                 "name": "Cruise_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_18.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10864,7 +10864,7 @@
                 "format": "jpeg",
                 "id": "1ecb3e8d14dbff5498b41561f23e8322",
                 "name": "Cruise_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_17.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10912,7 +10912,7 @@
                 "format": "jpeg",
                 "id": "3b67ac13034ea9be4bf7dfadeb85ee9c",
                 "name": "Cruise_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_16.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -10960,7 +10960,7 @@
                 "format": "jpeg",
                 "id": "33a74d221fefe4a082d2bad3fc42ea01",
                 "name": "Cruise_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_15.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11008,7 +11008,7 @@
                 "format": "jpeg",
                 "id": "3536d3aa7f26f3e5a4bae3ff39d59b75",
                 "name": "Cruise_14.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_14.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_14.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11056,7 +11056,7 @@
                 "format": "jpeg",
                 "id": "c3aa6f19c64c1bbd1e536dca331767f6",
                 "name": "Cruise_13.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_13.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_13.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11104,7 +11104,7 @@
                 "format": "jpeg",
                 "id": "8bf1cb68efc6a34c6b85f5e11874b3fa",
                 "name": "Cruise_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_11.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11152,7 +11152,7 @@
                 "format": "jpeg",
                 "id": "e99820c2ab74b88fd2885b20ec75f0b8",
                 "name": "Cruise_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_12.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11200,7 +11200,7 @@
                 "format": "jpeg",
                 "id": "16ca3bbe56d858abd889d922797f66f6",
                 "name": "Cruise_10.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_10.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_10.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11248,7 +11248,7 @@
                 "format": "jpeg",
                 "id": "2f7b1442900c1e5a97d43bbfe25d1140",
                 "name": "Cruise_1.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Cruise_1.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_1.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11295,8 +11295,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "5cb77d8ef0586c2178a413014b96e335",
-                "name": "Container%20Ship_8.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_8.jpeg",
+                "name": "Container_20Ship_8.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_8.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11343,8 +11343,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "c2c0b857c040fdff5ff187970fbfe541",
-                "name": "Container%20Ship_7.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_7.jpeg",
+                "name": "Container_20Ship_7.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_7.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11391,8 +11391,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "4679b54b80bcde8bc2cf8e4fddc383dc",
-                "name": "Container%20Ship_6.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_6.jpeg",
+                "name": "Container_20Ship_6.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_6.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11439,8 +11439,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "343ca404f3533d211155f531512b3c21",
-                "name": "Container%20Ship_5.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_5.jpeg",
+                "name": "Container_20Ship_5.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_5.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11643,8 +11643,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "073832c83487d101575596ec1573bf47",
-                "name": "Container%20Ship_4.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_4.jpeg",
+                "name": "Container_20Ship_4.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_4.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -11891,8 +11891,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "1e0ba1153495887bf7376aefc80effd9",
-                "name": "Container%20Ship_30.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_30.jpeg",
+                "name": "Container_20Ship_30.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_30.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -12155,8 +12155,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "76e9e16c3166a048814e25337cd280ab",
-                "name": "Container%20Ship_3.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_3.jpeg",
+                "name": "Container_20Ship_3.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_3.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -12423,8 +12423,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "c4f0879bebbe0cc1c68716398147e129",
-                "name": "Container%20Ship_29.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_29.jpeg",
+                "name": "Container_20Ship_29.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_29.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -12627,8 +12627,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "6b330fce4690857f3a254f30176fff16",
-                "name": "Container%20Ship_28.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_28.jpeg",
+                "name": "Container_20Ship_28.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_28.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -12831,8 +12831,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "56b604bca028cc4c62bd53ae36fa2780",
-                "name": "Container%20Ship_27.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_27.jpeg",
+                "name": "Container_20Ship_27.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_27.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -13091,8 +13091,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "464f8c4deb5fccc483d2264c81b77b1e",
-                "name": "Container%20Ship_26.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_26.jpeg",
+                "name": "Container_20Ship_26.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_26.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -13295,8 +13295,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "eecbecc9ac5d93b78c6f984393c6549d",
-                "name": "Container%20Ship_25.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_25.jpeg",
+                "name": "Container_20Ship_25.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_25.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -13495,8 +13495,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "dfc500e953f15e95f103646719bffed4",
-                "name": "Container%20Ship_24.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_24.jpeg",
+                "name": "Container_20Ship_24.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_24.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -13687,8 +13687,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "aebcaa1942b7505eabdadf00efc98f78",
-                "name": "Container%20Ship_23.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_23.jpeg",
+                "name": "Container_20Ship_23.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_23.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -13863,8 +13863,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "c85c44fbee416cf409f9c886b88882f8",
-                "name": "Container%20Ship_22.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_22.jpeg",
+                "name": "Container_20Ship_22.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_22.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -14035,8 +14035,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "1d573d6aace1085fb2a3e231897b6033",
-                "name": "Container%20Ship_21.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_21.jpeg",
+                "name": "Container_20Ship_21.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_21.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -14227,8 +14227,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "5f8ec936c44d0a4665787be14f036994",
-                "name": "Container%20Ship_20.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_20.jpeg",
+                "name": "Container_20Ship_20.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_20.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -14403,8 +14403,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "8bd7b847eed9a83634087e3526cf60c5",
-                "name": "Container%20Ship_2.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_2.jpeg",
+                "name": "Container_20Ship_2.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_2.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -14671,8 +14671,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "db988832a1ed0e45d1073b8c0ebf6350",
-                "name": "Container%20Ship_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_19.jpeg",
+                "name": "Container_20Ship_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_19.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -14875,8 +14875,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "f62de4a1423a01e3d2306db24d17acc3",
-                "name": "Container%20Ship_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_18.jpeg",
+                "name": "Container_20Ship_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_18.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -15079,8 +15079,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "fe6e8badd9f7a7ba0460cec22c75afc2",
-                "name": "Container%20Ship_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_17.jpeg",
+                "name": "Container_20Ship_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_17.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -15271,8 +15271,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "4427b33b95633ca1490873ef1985d187",
-                "name": "Container%20Ship_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_16.jpeg",
+                "name": "Container_20Ship_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_16.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -15491,8 +15491,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "1175188a670792c94e305185ad367e08",
-                "name": "Container%20Ship_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_15.jpeg",
+                "name": "Container_20Ship_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_15.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -15747,8 +15747,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "e2337e550dc7442775ba74d4e5d11e94",
-                "name": "Container%20Ship_14.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_14.jpeg",
+                "name": "Container_20Ship_14.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_14.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -15995,8 +15995,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "818dbd599ae83bd11d120f2d54c17585",
-                "name": "Container%20Ship_13.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_13.jpeg",
+                "name": "Container_20Ship_13.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_13.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -16227,8 +16227,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "5a4c51323aa3ddae65befb002ab9ea84",
-                "name": "Container%20Ship_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_12.jpeg",
+                "name": "Container_20Ship_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_12.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -16451,8 +16451,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "a6ba661abd32476bb326242b5915acd5",
-                "name": "Container%20Ship_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_11.jpeg",
+                "name": "Container_20Ship_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_11.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -16643,8 +16643,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "ab0197afb7e51011b3135e2e66668f4c",
-                "name": "Container%20Ship_10.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_10.jpeg",
+                "name": "Container_20Ship_10.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_10.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -16839,8 +16839,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "bd6751a90012b84fe9539167d0a8595d",
-                "name": "Container%20Ship_1.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Container%20Ship_1.jpeg",
+                "name": "Container_20Ship_1.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_1.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -17044,7 +17044,7 @@
                 "format": "jpeg",
                 "id": "27a0ec0d6558489a7a3b0e40440e048c",
                 "name": "Bulkers_40.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_40.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_40.jpeg",
                 "size": {
                     "width": 300,
                     "height": 249
@@ -17164,7 +17164,7 @@
                 "format": "jpeg",
                 "id": "179c8b32da685395e114b11ae812f1b9",
                 "name": "Bulkers_39.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_39.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_39.jpeg",
                 "size": {
                     "width": 530,
                     "height": 300
@@ -17316,7 +17316,7 @@
                 "format": "jpeg",
                 "id": "ce8782a0d9bbe4b4aa95b9f65e7c80f3",
                 "name": "Bulkers_38.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_38.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_38.jpeg",
                 "size": {
                     "width": 800,
                     "height": 366
@@ -17568,7 +17568,7 @@
                 "format": "jpeg",
                 "id": "2106403e7ebcc54eb1964be9737c7d6e",
                 "name": "Bulkers_37.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_37.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_37.jpeg",
                 "size": {
                     "width": 1266,
                     "height": 580
@@ -17688,7 +17688,7 @@
                 "format": "jpeg",
                 "id": "f8158ba3e9542054dbd2d66318c00d87",
                 "name": "Bulkers_36.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_36.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_36.jpeg",
                 "size": {
                     "width": 1920,
                     "height": 1080
@@ -17944,7 +17944,7 @@
                 "format": "jpeg",
                 "id": "bfbc5c75dffafeb25d81c8c4c2055616",
                 "name": "Bulkers_35.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_35.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_35.jpeg",
                 "size": {
                     "width": 1920,
                     "height": 1080
@@ -18120,7 +18120,7 @@
                 "format": "jpeg",
                 "id": "0a210d31ffa73bcb9b3f104059432d1e",
                 "name": "Bulkers_34.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_34.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_34.jpeg",
                 "size": {
                     "width": 800,
                     "height": 533
@@ -18344,7 +18344,7 @@
                 "format": "jpeg",
                 "id": "ef19255a4aebc38c5cf89380b29bfa7a",
                 "name": "Bulkers_33.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_33.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_33.jpeg",
                 "size": {
                     "width": 800,
                     "height": 526
@@ -18548,7 +18548,7 @@
                 "format": "jpeg",
                 "id": "2baeb3684049867ddbdfbd1588ff3f1c",
                 "name": "Bulkers_32.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_32.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_32.jpeg",
                 "size": {
                     "width": 800,
                     "height": 523
@@ -18788,7 +18788,7 @@
                 "format": "jpeg",
                 "id": "200f11a596c3d149548922d82777b3de",
                 "name": "Bulkers_31.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_31.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_31.jpeg",
                 "size": {
                     "width": 800,
                     "height": 448
@@ -19156,7 +19156,7 @@
                 "format": "jpeg",
                 "id": "d0d69d93fcba08fee5a1024d677eda58",
                 "name": "Bulkers_29.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_29.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_29.jpeg",
                 "size": {
                     "width": 800,
                     "height": 400
@@ -19344,7 +19344,7 @@
                 "format": "jpeg",
                 "id": "302347eb2ec8d80165d8d605bde6ced4",
                 "name": "Bulkers_30.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_30.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_30.jpeg",
                 "size": {
                     "width": 1536,
                     "height": 1044
@@ -19644,7 +19644,7 @@
                 "format": "jpeg",
                 "id": "0128eab27f1a891a84a2c7988af03d4a",
                 "name": "Bulkers_28.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_28.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_28.jpeg",
                 "size": {
                     "width": 800,
                     "height": 532
@@ -19912,7 +19912,7 @@
                 "format": "jpeg",
                 "id": "a46e7de025d2ff2fce2137d6d7ba2a66",
                 "name": "Bulkers_27.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_27.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_27.jpeg",
                 "size": {
                     "width": 338,
                     "height": 450
@@ -20192,7 +20192,7 @@
                 "format": "jpeg",
                 "id": "41f9f3e84cb213fbd4dfcbf78b994ed4",
                 "name": "Bulkers_26.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_26.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_26.jpeg",
                 "size": {
                     "width": 860,
                     "height": 424
@@ -20440,7 +20440,7 @@
                 "format": "jpeg",
                 "id": "b8a7a02f8b307410ff893be6a45a1c8e",
                 "name": "Bulkers_25.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_25.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_25.jpeg",
                 "size": {
                     "width": 800,
                     "height": 400
@@ -20620,7 +20620,7 @@
                 "format": "jpeg",
                 "id": "6e1ce315bce11090bf15f8d2ce24b6c4",
                 "name": "Bulkers_24.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_24.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_24.jpeg",
                 "size": {
                     "width": 600,
                     "height": 324
@@ -20773,7 +20773,7 @@
                 "format": "jpeg",
                 "id": "259ee107bb11bbb6c50286426e8f8713",
                 "name": "Bulkers_23.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_23.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_23.jpeg",
                 "size": {
                     "width": 860,
                     "height": 547
@@ -21121,7 +21121,7 @@
                 "format": "jpeg",
                 "id": "ecede66958c47ea798538264d135de50",
                 "name": "Bulkers_22.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_22.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_22.jpeg",
                 "size": {
                     "width": 800,
                     "height": 600
@@ -21393,7 +21393,7 @@
                 "format": "jpeg",
                 "id": "b152db7a2a9cb4448fb942a8045d7d5e",
                 "name": "Bulkers_21.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_21.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_21.jpeg",
                 "size": {
                     "width": 800,
                     "height": 398
@@ -22097,7 +22097,7 @@
                 "format": "jpeg",
                 "id": "50e7fb061b556f270bbbc85332d35c9f",
                 "name": "Bulkers_20.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_20.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_20.jpeg",
                 "size": {
                     "width": 800,
                     "height": 531
@@ -22405,7 +22405,7 @@
                 "format": "jpeg",
                 "id": "fd7dd6f5936d87683809aeaf623112e0",
                 "name": "Bulkers_19.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_19.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_19.jpeg",
                 "size": {
                     "width": 650,
                     "height": 254
@@ -22709,7 +22709,7 @@
                 "format": "jpeg",
                 "id": "82028c0b8f8a1613736910484002ac6f",
                 "name": "Bulkers_18.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_18.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_18.jpeg",
                 "size": {
                     "width": 800,
                     "height": 450
@@ -23125,7 +23125,7 @@
                 "format": "jpeg",
                 "id": "4d1aee88531714051c489a9858956bb0",
                 "name": "Bulkers_17.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_17.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_17.jpeg",
                 "size": {
                     "width": 800,
                     "height": 450
@@ -23433,7 +23433,7 @@
                 "format": "jpeg",
                 "id": "c7b657b1fe9f496568521b7d6dc37491",
                 "name": "Bulkers_16.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_16.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_16.jpeg",
                 "size": {
                     "width": 800,
                     "height": 450
@@ -23797,7 +23797,7 @@
                 "format": "jpeg",
                 "id": "ccb617bf2bf30e3db2d5e72e3f870c50",
                 "name": "Bulkers_15.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_15.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_15.jpeg",
                 "size": {
                     "width": 800,
                     "height": 476
@@ -24221,7 +24221,7 @@
                 "format": "jpeg",
                 "id": "2f0ce29644d73f51f9b8720a80d796ca",
                 "name": "Bulkers_14.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_14.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_14.jpeg",
                 "size": {
                     "width": 800,
                     "height": 533
@@ -24677,7 +24677,7 @@
                 "format": "jpeg",
                 "id": "813615754dd06f94dccfcf33b2751b8c",
                 "name": "Bulkers_13.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_13.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_13.jpeg",
                 "size": {
                     "width": 800,
                     "height": 600
@@ -25097,7 +25097,7 @@
                 "format": "jpeg",
                 "id": "c84cf65d93668cbd9c02f7f63d25a6c4",
                 "name": "Bulkers_12.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_12.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_12.jpeg",
                 "size": {
                     "width": 800,
                     "height": 480
@@ -25457,7 +25457,7 @@
                 "format": "jpeg",
                 "id": "828e5bcc64ed9af369fddd961bd075cf",
                 "name": "Bulkers_11.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Bulkers_11.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_11.jpeg",
                 "size": {
                     "width": 800,
                     "height": 480
@@ -25872,8 +25872,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "3cfcde16545d4aec0e26feda8112c46b",
-                "name": "Aircraft%20Carrier_99.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_99.jpeg",
+                "name": "Aircraft_20Carrier_99.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_99.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -26240,8 +26240,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "4f70294a6e3e8aa4d721081291c3d2e2",
-                "name": "Aircraft%20Carrier_98.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_98.jpeg",
+                "name": "Aircraft_20Carrier_98.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_98.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -26592,8 +26592,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "ed30593647bc090f8a1aaaeb517d8249",
-                "name": "Aircraft%20Carrier_97.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_97.jpeg",
+                "name": "Aircraft_20Carrier_97.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_97.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -26968,8 +26968,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "8ec7b58f42ecb0324fb97def7736c935",
-                "name": "Aircraft%20Carrier_96.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_96.jpeg",
+                "name": "Aircraft_20Carrier_96.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_96.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27196,8 +27196,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "a7a44100f85e51118c3c13a22b4e45ac",
-                "name": "Aircraft%20Carrier_95.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_95.jpeg",
+                "name": "Aircraft_20Carrier_95.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_95.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27384,8 +27384,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "b457332da76ebb1d7af75cd7e694dc25",
-                "name": "Aircraft%20Carrier_94.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_94.jpeg",
+                "name": "Aircraft_20Carrier_94.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_94.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27532,8 +27532,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "f9a8bd78a00c626cde6eeaaf0dd4bf23",
-                "name": "Aircraft%20Carrier_93.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_93.jpeg",
+                "name": "Aircraft_20Carrier_93.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_93.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27692,8 +27692,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "5122ae2163d31cf52079369fd33166b0",
-                "name": "Aircraft%20Carrier_92.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_92.jpeg",
+                "name": "Aircraft_20Carrier_92.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_92.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27840,8 +27840,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "39ceb333d61f20df1d7af4d513c46ae4",
-                "name": "Aircraft%20Carrier_91.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_91.jpeg",
+                "name": "Aircraft_20Carrier_91.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_91.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -27928,8 +27928,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "730918e240836463eee822e0d3413289",
-                "name": "Aircraft%20Carrier_90.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_90.jpeg",
+                "name": "Aircraft_20Carrier_90.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_90.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28008,8 +28008,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "593f175abc28d1879e13dc019673cbe6",
-                "name": "Aircraft%20Carrier_89.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_89.jpeg",
+                "name": "Aircraft_20Carrier_89.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_89.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28212,8 +28212,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "f0919d4eefb2dbb00f12880f700846fe",
-                "name": "Aircraft%20Carrier_88.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_88.jpeg",
+                "name": "Aircraft_20Carrier_88.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_88.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28476,8 +28476,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "d63862c14e4cdf9ac642ab38b3502028",
-                "name": "Aircraft%20Carrier_87.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_87.jpeg",
+                "name": "Aircraft_20Carrier_87.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_87.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28632,8 +28632,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "3582259ce5a423bbbb6e7d55d9c5dbbe",
-                "name": "Aircraft%20Carrier_86.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_86.jpeg",
+                "name": "Aircraft_20Carrier_86.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_86.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28804,8 +28804,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "44d601b64895569462e094bf26b23bf6",
-                "name": "Aircraft%20Carrier_85.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_85.jpeg",
+                "name": "Aircraft_20Carrier_85.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_85.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -28920,8 +28920,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "62847cb8a1333eb36bbdafc7f1b7889f",
-                "name": "Aircraft%20Carrier_84.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_84.jpeg",
+                "name": "Aircraft_20Carrier_84.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_84.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29036,8 +29036,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "b9f14d9ec207bcf0b2e6cef25c4b4f23",
-                "name": "Aircraft%20Carrier_83.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_83.jpeg",
+                "name": "Aircraft_20Carrier_83.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_83.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29124,8 +29124,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "dca80c4d9236001114c7bca46a3d4983",
-                "name": "Aircraft%20Carrier_82.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_82.jpeg",
+                "name": "Aircraft_20Carrier_82.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_82.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29264,8 +29264,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "ea3c7da5c43e6dab80783bc84a1fbaaa",
-                "name": "Aircraft%20Carrier_81.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_81.jpeg",
+                "name": "Aircraft_20Carrier_81.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_81.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29368,8 +29368,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "204c1761b90518f03b62d6bcfccf3a4e",
-                "name": "Aircraft%20Carrier_80.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_80.jpeg",
+                "name": "Aircraft_20Carrier_80.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_80.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29508,8 +29508,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "0c35f500afd08170c352ddf1aa820492",
-                "name": "Aircraft%20Carrier_79.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_79.jpeg",
+                "name": "Aircraft_20Carrier_79.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_79.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29628,8 +29628,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "7dbfb31da37a8821aec466df67a51116",
-                "name": "Aircraft%20Carrier_78.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_78.jpeg",
+                "name": "Aircraft_20Carrier_78.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_78.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29788,8 +29788,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "7102bb336aa0219cab9e75daada252b7",
-                "name": "Aircraft%20Carrier_77.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_77.jpeg",
+                "name": "Aircraft_20Carrier_77.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_77.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -29960,8 +29960,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "56bdaf264ca3c1fb54410ede47867cb0",
-                "name": "Aircraft%20Carrier_76.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_76.jpeg",
+                "name": "Aircraft_20Carrier_76.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_76.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -30072,8 +30072,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "96451472ad863035725102a3f3f8a0d5",
-                "name": "Aircraft%20Carrier_75.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_75.jpeg",
+                "name": "Aircraft_20Carrier_75.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_75.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -30172,8 +30172,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "f9c955a73751b105a1d1e02920958a00",
-                "name": "Aircraft%20Carrier_74.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_74.jpeg",
+                "name": "Aircraft_20Carrier_74.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_74.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -30360,8 +30360,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "e2144a8e788fc0ae37f7e3638acec2b4",
-                "name": "Aircraft%20Carrier_73.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_73.jpeg",
+                "name": "Aircraft_20Carrier_73.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_73.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -30480,8 +30480,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "89e126968fa344c54b45e25cb5a86528",
-                "name": "Aircraft%20Carrier_72.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_72.jpeg",
+                "name": "Aircraft_20Carrier_72.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_72.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416
@@ -30608,8 +30608,8 @@
             "asset": {
                 "format": "jpeg",
                 "id": "2e3ef0abb3aa043be8a364e0ef46fed2",
-                "name": "Aircraft%20Carrier_100.jpeg",
-                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/Aircraft%20Carrier_100.jpeg",
+                "name": "Aircraft_20Carrier_100.jpeg",
+                "path": "file:C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_100.jpeg",
                 "size": {
                     "width": 600,
                     "height": 416

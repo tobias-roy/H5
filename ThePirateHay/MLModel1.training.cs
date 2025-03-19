@@ -7,18 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
-using Microsoft.ML.TorchSharp;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Image;
-using Microsoft.ML.TorchSharp.AutoFormerV2;
 using System.Text.Json.Nodes;
 using System.Text.Json;
+using Microsoft.ML.TorchSharp;
+using Microsoft.ML.TorchSharp.AutoFormerV2;
 
 namespace ThePirateHay
 {
     public partial class MLModel1
     {
-        public const string RetrainFilePath = @"C:\Users\tobia\source\repos\H5\ThePirateHay\dataset\train\trainset\vott-json-export\ThePirateHay-export.json";
+        public const string RetrainFilePath = @"C:/Users/tobia/source/repos/H5/ThePirateHay/dataset/train/trainset/vott-json-export/ThePirateHay-export.json";
         public const int TrainingImageWidth = 800;
         public const int TrainingImageHeight = 600;
 
@@ -27,7 +27,7 @@ namespace ThePirateHay
         /// </summary>
         /// <param name="outputModelPath">File path for saving the model. Should be similar to "C:\YourPath\ModelName.mlnet"</param>
         /// <param name="inputDataFilePath">Path to the data file for training.</param>
-        public static void Train(string outputModelPath, string inputDataFilePath = RetrainFilePath)
+        public static void Train(string outputModelPath, string onnxPath, string inputDataFilePath = RetrainFilePath)
         {
            var mlContext = new MLContext();
            mlContext.GpuDeviceId = 0;
@@ -84,17 +84,28 @@ namespace ThePirateHay
                         boxList.Add(yOffset + ((top + height) * aspect));
                     }
                     
-                }    
+                }
 
-                var mlImage = MLImage.CreateFromFile(asset.Value["asset"]["path"].GetValue<string>().Replace("file:", ""));
-                var modelInput = new ModelInput()
+                var imagePath = asset.Value["asset"]["path"].GetValue<string>().Replace("file:", "");
+                Console.WriteLine($"Extracted image path: {imagePath}");
+
+                if (File.Exists(imagePath))
                 {
-                    Image = mlImage,
-                    Labels = labelList.ToArray(),
-                    Box = boxList.ToArray(),
-                };    
+                    var mlImage = MLImage.CreateFromFile(imagePath);
+                    var modelInput = new ModelInput()
+                    {
+                        Image = mlImage,
+                        Labels = labelList.ToArray(),
+                        Box = boxList.ToArray(),
+                    };
 
-                imageData.Add(modelInput);
+                    imageData.Add(modelInput);
+                }
+                else
+                {
+                    Console.WriteLine($"File not found: {imagePath}");
+                    // Handle the missing file case
+                }
             }
 
             return imageData;
@@ -140,29 +151,43 @@ namespace ThePirateHay
         /// <summary>
         /// Retrain model using the pipeline generated as part of the training process.
         /// </summary>
-        /// <param name="mlContext"></param>
-        /// <param name="trainData"></param>
+        /// <param name = "mlContext" ></ param >
+        /// < param name="trainData"></param>
         /// <returns></returns>
         public static ITransformer RetrainModel(MLContext mlContext, IDataView trainData)
-        {
-            var pipeline = BuildPipeline(mlContext);
-            var model = pipeline.Fit(trainData);
+    {
+        var pipeline = BuildPipeline(mlContext);
+        var model = pipeline.Fit(trainData);
 
-            return model;
-        }
+        return model;
+    }
 
         /// <summary>
-        /// build the pipeline that is used from model builder. Use this function to retrain model.
+        /// build the pipeline that is used from model builder.Use this function to retrain model.
         /// </summary>
-        /// <param name="mlContext"></param>
-        /// <returns></returns>
+        /// <param name = "mlContext" ></ param >
+        /// < returns ></ returns >
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Labels",inputColumnName:@"Labels",addKeyValueAnnotationsAsText:false)      
-                                    .Append(mlContext.Transforms.ResizeImages(outputColumnName:@"Image",inputColumnName:@"Image",imageHeight:TrainingImageHeight,imageWidth:TrainingImageWidth,cropAnchor:ImageResizingEstimator.Anchor.Center,resizing:ImageResizingEstimator.ResizingKind.IsoPad))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.ObjectDetection(new ObjectDetectionTrainer.Options(){LabelColumnName=@"Labels",PredictedLabelColumnName=@"PredictedLabel",BoundingBoxColumnName=@"Box",ImageColumnName=@"Image",ScoreColumnName=@"score",MaxEpoch=50,InitLearningRate=1,WeightDecay=0,}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
+            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName: @"Labels", inputColumnName: @"Labels", addKeyValueAnnotationsAsText: false)
+                .Append(
+                    mlContext
+                        .Transforms
+                        .ResizeImages(outputColumnName: @"Image", inputColumnName: @"Image", imageHeight: TrainingImageHeight, imageWidth: TrainingImageWidth, cropAnchor: ImageResizingEstimator.Anchor.Center, resizing: ImageResizingEstimator.ResizingKind.IsoPad))
+                .Append(mlContext.MulticlassClassification.Trainers.ObjectDetection(new ObjectDetectionTrainer.Options()
+                {
+                    LabelColumnName = @"Labels",
+                    PredictedLabelColumnName = @"PredictedLabel",
+                    BoundingBoxColumnName = @"Box",
+                    ImageColumnName = @"Image",
+                    ScoreColumnName = @"score",
+                    MaxEpoch = 15,
+                    InitLearningRate = 1,
+                    WeightDecay = 0,
+                    LogEveryNStep = 1
+                }))
+                .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName: @"PredictedLabel", inputColumnName: @"PredictedLabel"));
 
             return pipeline;
         }
