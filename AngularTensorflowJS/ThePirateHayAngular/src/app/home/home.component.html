@@ -1,10 +1,21 @@
-<button (click)="GoToHome()" class="button back">Back</button>
-<div class="videoWrapper" style="position: relative;">
-  <video id="video" width="640" height="480" style="position: absolute;"></video>
-  <canvas id="canvas" width="640" height="480" style="position: absolute;"></canvas>
+<div class="buttonWrapper">
+  <button>Training</button>
+  <button (click)="GoToLiveFeed()" >Live feed</button>
+  <button>Still image</button>
 </div>
 
 <style>
+  .buttonWrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 20px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 90vh;
+    position: relative;
+    gap: 18px;
+  }
+
   button {
     display: flex;
     align-items: center;
@@ -27,13 +38,5 @@
     box-shadow: 0 0 #333;
     color: #fff;
     background-color: #333;
-  }
-
-  .videoWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:90vh;
-    position: relative;
   }
 </style>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as cocoSSD from '@tensorflow-models/coco-ssd';
+import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-backend-webgl';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cam',
@@ -9,6 +11,10 @@ import '@tensorflow/tfjs-backend-webgl';
   styleUrls: ['./cam.component.css']
 })
 export class CamComponent implements OnInit {
+  constructor(private router: Router) {
+  }
+
+  videoStream: any;
   videoRef: any;
   modelCOCOSSD: any;
 
@@ -17,6 +23,8 @@ export class CamComponent implements OnInit {
   async ngAfterViewInit() {
     this.videoRef = document.getElementById('video');
     await this.startCamera();
+    await tf.setBackend('webgl'); // Set the backend to 'webgl'
+    await tf.ready(); // Ensure the backend is ready
     await this.loadModel();
   }
 
@@ -25,8 +33,9 @@ export class CamComponent implements OnInit {
       video: { width: 640, height: 480 },
       audio: false
     }).then(stream => {
+      this.videoStream = stream;
       if (this.videoRef != null) {
-        this.videoRef.srcObject = stream;
+        this.videoRef.srcObject = this.videoStream;
         this.videoRef.onloadedmetadata = () => {
           this.videoRef.play();
         };
@@ -39,13 +48,12 @@ export class CamComponent implements OnInit {
     this.detectFrame(this.videoRef, this.modelCOCOSSD);
   }
 
-  detectFrame = (video: any, model: any) => {
+  detectFrame = async (video: any, model: any) => {
     if (video.videoWidth > 0 && video.videoHeight > 0) {
-      model.detect(video).then((predictions: any[]) => {
-        this.renderPredictions(predictions);
-        requestAnimationFrame(() => {
-          this.detectFrame(video, model);
-        });
+      const predictions = await model.detect(video);
+      this.renderPredictions(predictions);
+      requestAnimationFrame(() => {
+        this.detectFrame(video, model);
       });
     } else {
       requestAnimationFrame(() => {
@@ -88,5 +96,11 @@ export class CamComponent implements OnInit {
       ctx.fillStyle = "#000000";
       ctx.fillText(text, x, y);
     });
+  }
+
+  GoToHome() {
+    this.videoRef.pause();
+    this.videoStream.getTracks().forEach((track: any) => {track.stop()});
+    this.router.navigate(['/']);
   }
 }

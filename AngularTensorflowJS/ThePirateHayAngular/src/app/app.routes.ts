@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import {CamComponent} from './cam/cam.component';
+import {HomeComponent} from './home/home.component';
 
 export const routes: Routes = [
-  { path: '', component: CamComponent },
+  { path: '', component: HomeComponent},
+  { path: 'livefeed', component: CamComponent }
 ];
