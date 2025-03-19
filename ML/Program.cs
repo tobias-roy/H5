@@ -9,9 +9,11 @@ class Program
     static void Main(string[] args)
     {
         var ctx = new MLContext();
+        CalibratedBinaryClassificationMetrics oldModelMetrics;
         try
         {
             ctx.Model.Load("model.zip", out var schema);
+            
         }
         catch (Exception ex)
         {
@@ -19,7 +21,7 @@ class Program
         }
         
         var dataView = ctx.Data.LoadFromTextFile<Models.SentimentData>("yelp.txt", hasHeader: false, separatorChar: '\t');
-        var splitDataView = ctx.Data.TrainTestSplit(dataView, testFraction: 0.33);
+        var splitDataView = ctx.Data.TrainTestSplit(dataView, testFraction: 0.23);
         var estimator = ctx.Transforms.Text.FeaturizeText(
                 outputColumnName: "Features",
                 inputColumnName: nameof(Models.SentimentData.Text)
@@ -52,6 +54,7 @@ class Program
         });
         
         //Save the model we just trained
+        
         ctx.Model.Save(model, dataView.Schema, "model.zip");
 
         //Loop over asking for user input
