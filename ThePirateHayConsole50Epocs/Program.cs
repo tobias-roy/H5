@@ -5,6 +5,7 @@ using Microsoft.ML.Data;
 using System;
 using System.IO;
 using Microsoft.ML;
+using System.Collections.Generic;
 
 // Create single instance of sample data from first line of dataset for model input.
 var image = MLImage.CreateFromFile(@"C:\Users\tobia\source\repos\H5\ThePirateHay\dataset\train\trainset\Container Ship_9.jpeg");
@@ -33,7 +34,7 @@ foreach (var item in boxes)
 
 // Convert the model to ONNX format
 string mlnetModelPath = "C:/Users/tobia/source/repos/H5/ThePirateHay/MLModel1.mlnet";
-string onnxModelPath = "model.onnx";
+string onnxModelPath = "C:/Users/tobia/source/repos/H5/ThePirateHay/model.onnx";
 ModelConverter.ConvertModelToOnnx(mlnetModelPath, onnxModelPath);
 
 public static class ModelConverter
@@ -72,7 +73,7 @@ public static class ModelConverter
             // Create some example data
             var data = new List<ImageData>
             {
-                new ImageData { ImagePath = tempImagePath }
+                new ImageData { ImagePath = tempImagePath, Labels = new[] { "dummy_label" } } // Use vector of strings for Labels
             };
 
             // Load the data
@@ -111,5 +112,6 @@ public static class ModelConverter
     public class ImageData
     {
         public string ImagePath { get; set; }
+        public string[] Labels { get; set; } // Use vector of strings for Labels
     }
 }
