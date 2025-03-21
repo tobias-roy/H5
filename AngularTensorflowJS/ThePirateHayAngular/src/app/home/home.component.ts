@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {NavigatorService} from '../navigator.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,5 @@ import {Router} from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
-
-  GoToLiveFeed() {
-    this.router.navigate(['/livefeed']);
-  }
+  constructor(private router: Router, protected nav: NavigatorService) {}
 }

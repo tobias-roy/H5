@@ -1,0 +1,84 @@
+<button (click)="nav.NavigateTo('/')" class="button back">Back</button>
+<div class="trainerWrapper">
+  @if(loadingModel) {
+    <div class="loadingWrapper">
+      <p>Loading model {{loadingPercent}}</p>
+      <div class="progress-border">
+        <div id="innerProgress" class="progress-border-grey" style="height:24px;" [ngStyle]="{'width': loadingPercent}" ></div>
+      </div>
+    </div>
+  }
+  @if(!loadingModel){
+    <div class="defineModelWrapper">
+      <div class="inputWrapper">
+        <label for="neuronInput">Neurons:</label>
+        <input id="neuronInput" required title="Neurons" [(ngModel)]="neurons">
+      </div>
+      <button (click)="defineTrainingModel()">Define training model</button>
+    </div>
+  }
+</div>
+
+<style>
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+    border-radius: 0px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    border: 2px solid #333333;
+    transition: 0.3s;
+    box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+    background-color: #ffffff;
+  }
+
+  button:hover {
+    box-shadow: 0 0 #333;
+    color: #fff;
+    background-color: #333;
+  }
+
+  .trainerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+    position: relative;
+  }
+
+  .inputWrapper > label {
+    margin-right: 5px;
+  }
+
+  .loadingWrapper, .defineModelWrapper {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+  }
+
+  .defineModelWrapper{
+    gap: 10px
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .progress-border{
+    border:1px solid #ccc!important;
+    width: 300px;
+    box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+
+  }
+
+  .progress-border-grey {
+    color:#000!important;
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+</style>
