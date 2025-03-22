@@ -24,17 +24,11 @@ export class CamComponent implements OnInit {
   }
 
   async ngAfterViewInit() {
-    console.log('ngAfterViewInit');
     this.videoRef = document.getElementById('video');
-    console.log('videoRef:', this.videoRef);
     await this.startCamera();
-    console.log('Camera started');
     await tf.setBackend('webgl');
-    console.log('TensorFlow backend set to webgl');
     await tf.ready();
-    console.log('TensorFlow ready');
     await this.loadModel();
-
   }
 
   async startCamera() {
@@ -52,9 +46,7 @@ export class CamComponent implements OnInit {
           this.videoRef.play();
         };
       }
-    }).catch(error => {
-      console.error('Error accessing media devices.', error);
-    });
+    })
   }
 
   async loadModel() {

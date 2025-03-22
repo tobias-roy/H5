@@ -4,91 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b173d1e-4253-4cc1-b356-db4a2952b01a" name="Changes" comment="Added tensorflow2 project">
-      <change afterPath="$PROJECT_DIR$/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard10of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard11of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard12of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard13of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard14of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard15of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard16of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard17of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard18of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard19of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard1of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard20of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard21of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard22of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard23of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard24of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard25of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard26of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard27of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard28of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard2of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard3of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard4of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard5of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard6of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard7of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard8of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/group1-shard9of28.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/public/model/model.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/detect_from_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/generate_tfrecord.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/labelmap.pbtxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/model_downloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/xml_to_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/cam/cam.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/cam/cam.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_74.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_77.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_81.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_84.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_87.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_91.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_93.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_94.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_95.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_97.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_98.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_99.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_20.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_24.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_27.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_28.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_19.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_22.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_23.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_25.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_28.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_26.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_27.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_29.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_15.jpeg" beforeDir="false" />
+    <list default="true" id="7b173d1e-4253-4cc1-b356-db4a2952b01a" name="Changes" comment="Forgot a folder">
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/ckpt-0.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/ckpt-0.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/inference_graph/checkpoint/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/inference_graph/checkpoint/ckpt-0.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/inference_graph/checkpoint/ckpt-0.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-21.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-21.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-22.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-22.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-23.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-23.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-24.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-24.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-25.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-25.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-26.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-26.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-27.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/training/faster_rcnn_resnet50_v1_640x640/ckpt-27.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/tfjsdetection/tfjsdetection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/AngularTensorflowJS/ThePirateHayAngular/src/app/tfjsdetection/tfjsdetection.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tf2/models" beforeDir="false" afterPath="$PROJECT_DIR$/tf2/models" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742505579485</updated>
       <workItem from="1742505579486" duration="3179000" />
-      <workItem from="1742592954861" duration="3265000" />
+      <workItem from="1742592954861" duration="4133000" />
     </task>
     <task id="LOCAL-00001" summary="Added tensorflow2 project">
       <option name="closed" value="true" />
@@ -207,7 +145,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742505950380</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed files">
+      <option name="closed" value="true" />
+      <created>1742627606565</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742627606565</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Forgot a folder">
+      <option name="closed" value="true" />
+      <created>1742627617954</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742627617954</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +172,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added tensorflow2 project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tensorflow2 project" />
+    <MESSAGE value="A lot of changes and stuff" />
+    <MESSAGE value="Changed files" />
+    <MESSAGE value="Forgot a folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgot a folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/H5$model_downloader.coverage" NAME="model_downloader Coverage Results" MODIFIED="1742507915189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf2/models/research/object_detection" />
