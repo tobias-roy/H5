@@ -4,7 +4,7 @@ import {loadGraphModel} from '@tensorflow/tfjs-converter';
 import { async } from 'rxjs';
 import {resolve} from '@angular/compiler-cli';
 tf.setBackend('webgl');
-const threshold = 0.75;
+const threshold = 0.30;
 
 
 @Component({
@@ -23,11 +23,12 @@ export class TfjsdetectionComponent implements OnInit {
 
     async ngAfterViewInit() {
       this.videoRef = document.getElementById('videoFeed');
+      this.canvasRef = document.getElementById('canvasOverlay');
       this.startCamera();
     }
 
     //Define the classes for detection
-    classes = {
+    classesDir = {
       1: {
         name: 'Aircraft carrier',
         id: 1
@@ -61,7 +62,6 @@ export class TfjsdetectionComponent implements OnInit {
         id: 8
       }
     }
-
 
     //In the funciton below using promises to do a Promise.all is the best approach
     async startCamera() {
@@ -110,7 +110,7 @@ export class TfjsdetectionComponent implements OnInit {
   }
 
   renderPredictions = (predictions: any) => {
-    const ctx = this.canvasRef.current.getContext("2d");
+    const ctx = this.canvasRef.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     // Font options.
@@ -118,12 +118,12 @@ export class TfjsdetectionComponent implements OnInit {
     ctx.font = font;
     ctx.textBaseline = "top";
 
-    //Getting predictions
     const boxes = predictions[4].arraySync();
     const scores = predictions[5].arraySync();
     const classes = predictions[6].dataSync();
     const detections = buildDetectedObjects(scores, threshold,
-      boxes, classes, this.classes);
+      boxes, classes, this.classesDir);
+    console.log(detections);
 
     detections.forEach(item => {
       const x = item['bbox'][0];
@@ -159,29 +159,34 @@ function process_input(video_frame: any){
   return tfImg.transpose([0,1,2]).expandDims();
 }
 
-function  buildDetectedObjects(scores: any, threshold: any, boxes: any, classes: any, classesDir: any) {
-  const detectionObjects: any[] = []
-  var video_frame = document.getElementById('frame');
-  scores[0].forEach((score: any, i: any) => {
-    if (score > threshold && video_frame != null) {
-      const bbox = [];
-      const minY = boxes[0][i][0] * video_frame.offsetHeight;
-      const minX = boxes[0][i][1] * video_frame.offsetWidth;
-      const maxY = boxes[0][i][2] * video_frame.offsetHeight;
-      const maxX = boxes[0][i][3] * video_frame.offsetWidth;
-      bbox[0] = minX;
-      bbox[1] = minY;
-      bbox[2] = maxX - minX;
-      bbox[3] = maxY - minY;
-      detectionObjects.push({
-        class: classes[i],
-        label: classesDir[classes[i]].name,
-        score: score.toFixed(4),
-        bbox: bbox
-      })
-    }
-  })
-  return detectionObjects
+function buildDetectedObjects(scores: any, threshold: any, boxes: any, classes: any, classesDir: any) {
+  const detectionObjects: any[] = [];
+  const video_frame = document.getElementById('videoFeed');
+  if (classes) {
+    scores[0].forEach((score: any, i: number) => {
+      if (score > threshold && video_frame != null) {
+        const classId = classes[i];
+        if (classesDir[classId]) {
+          const bbox = [];
+          const minY = boxes[0][i][0] * video_frame.offsetHeight;
+          const minX = boxes[0][i][1] * video_frame.offsetWidth;
+          const maxY = boxes[0][i][2] * video_frame.offsetHeight;
+          const maxX = boxes[0][i][3] * video_frame.offsetWidth;
+          bbox[0] = minX;
+          bbox[1] = minY;
+          bbox[2] = maxX - minX;
+          bbox[3] = maxY - minY;
+          detectionObjects.push({
+            class: classId,
+            label: classesDir[classId].name,
+            score: score.toFixed(4),
+            bbox: bbox
+          });
+        }
+      }
+    });
+  }
+  return detectionObjects;
 }
 
 async function loadModel() {
