@@ -1,0 +1,809 @@
+Index: .idea/projectSettingsUpdater.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/projectSettingsUpdater.xml b/.idea/projectSettingsUpdater.xml
+new file mode 100644
+--- /dev/null	(date 1742592953706)
++++ b/.idea/projectSettingsUpdater.xml	(date 1742592953706)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RiderProjectSettingsUpdater">
++    <option name="singleClickDiffPreview" value="1" />
++    <option name="vcsConfiguration" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"tf2\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ebd650a8116f7f7a8d9990d0a5190b3a39cb1821)
++++ b/.idea/misc.xml	(date 1742506747093)
+@@ -1,4 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="Black">
++    <option name="sdkName" value="tf2" />
++  </component>
+   <component name="ProjectRootManager" version="2" project-jdk-name="tf2" project-jdk-type="Python SDK" />
++  <component name="PythonCompatibilityInspectionAdvertiser">
++    <option name="version" value="3" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: tf2/models/research/object_detection/detect_from_image.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/detect_from_image.py b/tf2/models/research/object_detection/detect_from_image.py
+new file mode 100644
+--- /dev/null	(date 1742508776692)
++++ b/tf2/models/research/object_detection/detect_from_image.py	(date 1742508776692)
+@@ -0,0 +1,137 @@
++import numpy as np
++import argparse
++import os
++import tensorflow as tf
++from PIL import Image
++from io import BytesIO
++import glob
++import matplotlib.pyplot as plt
++
++from object_detection.utils import ops as utils_ops
++from object_detection.utils import label_map_util
++from object_detection.utils import visualization_utils as vis_util
++
++# patch tf1 into `utils.ops`
++utils_ops.tf = tf.compat.v1
++
++# Patch the location of gfile
++tf.gfile = tf.io.gfile
++
++
++def load_model(model_path):
++    model = tf.saved_model.load(model_path)
++    return model
++
++
++def load_image_into_numpy_array(path):
++    """Load an image from file into a numpy array.
++
++    Puts image into numpy array to feed into tensorflow graph.
++    Note that by convention we put it into a numpy array with shape
++    (height, width, channels), where channels=3 for RGB.
++
++    Args:
++      path: a file path (this can be local or on colossus)
++
++    Returns:
++      uint8 numpy array with shape (img_height, img_width, 3)
++    """
++    img_data = tf.io.gfile.GFile(path, 'rb').read()
++    image = Image.open(BytesIO(img_data))
++    (im_width, im_height) = image.size
++    return np.array(image.getdata()).reshape(
++        (im_height, im_width, 3)).astype(np.uint8)
++
++
++def run_inference_for_single_image(model, image):
++    # The input needs to be a tensor, convert it using `tf.convert_to_tensor`.
++    input_tensor = tf.convert_to_tensor(image)
++    # The model expects a batch of images, so add an axis with `tf.newaxis`.
++    input_tensor = input_tensor[tf.newaxis, ...]
++
++    # Run inference
++    output_dict = model(input_tensor)
++
++    # All outputs are batches tensors.
++    # Convert to numpy arrays, and take index [0] to remove the batch dimension.
++    # We're only interested in the first num_detections.
++    num_detections = int(output_dict.pop('num_detections'))
++    output_dict = {key: value[0, :num_detections].numpy()
++                   for key, value in output_dict.items()}
++    output_dict['num_detections'] = num_detections
++
++    # detection_classes should be ints.
++    output_dict['detection_classes'] = output_dict['detection_classes'].astype(np.int64)
++
++    # Handle models with masks:
++    if 'detection_masks' in output_dict:
++        # Reframe the the bbox mask to the image size.
++        detection_masks_reframed = utils_ops.reframe_box_masks_to_image_masks(
++            output_dict['detection_masks'], output_dict['detection_boxes'],
++            image.shape[0], image.shape[1])
++        detection_masks_reframed = tf.cast(detection_masks_reframed > 0.5, tf.uint8)
++        output_dict['detection_masks_reframed'] = detection_masks_reframed.numpy()
++
++    return output_dict
++
++
++def run_inference(model, category_index, image_path):
++    if os.path.isdir(image_path):
++        image_paths = []
++        for file_extension in ('*.png', '*jpg'):
++            image_paths.extend(glob.glob(os.path.join(image_path, file_extension)))
++
++        """add iterator here"""
++        i = 0
++        for i_path in image_paths:
++            image_np = load_image_into_numpy_array(i_path)
++            # Actual detection.
++            output_dict = run_inference_for_single_image(model, image_np)
++            # Visualization of the results of a detection.
++            vis_util.visualize_boxes_and_labels_on_image_array(
++                image_np,
++                output_dict['detection_boxes'],
++                output_dict['detection_classes'],
++                output_dict['detection_scores'],
++                category_index,
++                instance_masks=output_dict.get('detection_masks_reframed', None),
++                use_normalized_coordinates=True,
++                line_thickness=8)
++            """The existing plt lines do not work on local pc as they are not setup for GUI
++                Use plt.savefig() to save the results instead and view them in a folder"""
++            plt.imshow(image_np)
++            # plt.show()
++            plt.savefig("outputs/detection_output{}.png".format(i))  # make sure to make an outputs folder
++            i = i + 1
++    # else:
++    #     image_np = load_image_into_numpy_array(image_path)
++    #     # Actual detection.
++    #     output_dict = run_inference_for_single_image(model, image_np)
++    #     # Visualization of the results of a detection.
++    #     vis_util.visualize_boxes_and_labels_on_image_array(
++    #         image_np,
++    #         output_dict['detection_boxes'],
++    #         output_dict['detection_classes'],
++    #         output_dict['detection_scores'],
++    #         category_index,
++    #         instance_masks=output_dict.get('detection_masks_reframed', None),
++    #         use_normalized_coordinates=True,
++    #         line_thickness=8)
++    #     plt.imshow(image_np)
++    #     plt.show()
++
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description='Detect objects inside webcam videostream')
++    parser.add_argument('-m', '--model', type=str, required=True, help='Model Path')
++    parser.add_argument('-l', '--labelmap', type=str, required=True, help='Path to Labelmap')
++    parser.add_argument('-i', '--image_path', type=str, required=True, help='Path to image (or folder)')
++    args = parser.parse_args()
++
++    detection_model = load_model(args.model)
++    category_index = label_map_util.create_category_index_from_labelmap(args.labelmap, use_display_name=True)
++
++    run_inference(detection_model, category_index, args.image_path)
++
++# Command to start script
++#  python .\detect_from_images.py -m faster_rcnn_resnet50_v1_640x640x_coco17_tpu7-8\saved_model -l .\data\mscoco_label_map.pbtxt -i .\test_images
+\ No newline at end of file
+Index: tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config b/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config
+new file mode 100644
+--- /dev/null	(date 1742573380778)
++++ b/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config	(date 1742573380778)
+@@ -0,0 +1,145 @@
++# Faster R-CNN with Resnet-50 (v1) with 640x640 input resolution
++# Trained on COCO, initialized from Imagenet classification checkpoint
++#
++# Train on TPU-8
++#
++# Achieves 29.3 mAP on COCO17 Val
++
++model {
++  faster_rcnn {
++    num_classes: 8
++    image_resizer {
++      keep_aspect_ratio_resizer {
++        min_dimension: 640
++        max_dimension: 640
++        pad_to_max_dimension: true
++      }
++    }
++    feature_extractor {
++      type: 'faster_rcnn_resnet50_keras'
++      batch_norm_trainable: true
++    }
++    first_stage_anchor_generator {
++      grid_anchor_generator {
++        scales: [0.25, 0.5, 1.0, 2.0]
++        aspect_ratios: [0.5, 1.0, 2.0]
++        height_stride: 16
++        width_stride: 16
++      }
++    }
++    first_stage_box_predictor_conv_hyperparams {
++      op: CONV
++      regularizer {
++        l2_regularizer {
++          weight: 0.0
++        }
++      }
++      initializer {
++        truncated_normal_initializer {
++          stddev: 0.01
++        }
++      }
++    }
++    first_stage_nms_score_threshold: 0.0
++    first_stage_nms_iou_threshold: 0.7
++    first_stage_max_proposals: 300
++    first_stage_localization_loss_weight: 2.0
++    first_stage_objectness_loss_weight: 1.0
++    initial_crop_size: 14
++    maxpool_kernel_size: 2
++    maxpool_stride: 2
++    second_stage_box_predictor {
++      mask_rcnn_box_predictor {
++        use_dropout: false
++        dropout_keep_probability: 1.0
++        fc_hyperparams {
++          op: FC
++          regularizer {
++            l2_regularizer {
++              weight: 0.0
++            }
++          }
++          initializer {
++            variance_scaling_initializer {
++              factor: 1.0
++              uniform: true
++              mode: FAN_AVG
++            }
++          }
++        }
++        share_box_across_classes: true
++      }
++    }
++    second_stage_post_processing {
++      batch_non_max_suppression {
++        score_threshold: 0.0
++        iou_threshold: 0.6
++        max_detections_per_class: 100
++        max_total_detections: 300
++      }
++      score_converter: SOFTMAX
++    }
++    second_stage_localization_loss_weight: 2.0
++    second_stage_classification_loss_weight: 1.0
++    use_static_shapes: true
++    use_matmul_crop_and_resize: true
++    clip_anchors_to_image: true
++    use_static_balanced_label_sampler: true
++    use_matmul_gather_in_matcher: true
++  }
++}
++
++train_config: {
++  batch_size: 2
++  sync_replicas: true
++  startup_delay_steps: 0
++  replicas_to_aggregate: 8
++  num_steps: 25000
++  optimizer {
++    momentum_optimizer: {
++      learning_rate: {
++        cosine_decay_learning_rate {
++          learning_rate_base: .04
++          total_steps: 25000
++          warmup_learning_rate: .013333
++          warmup_steps: 2000
++        }
++      }
++      momentum_optimizer_value: 0.9
++    }
++    use_moving_average: false
++  }
++  fine_tune_checkpoint_version: V2
++  fine_tune_checkpoint: "faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/ckpt-0"
++  fine_tune_checkpoint_type: "detection"
++  data_augmentation_options {
++    random_horizontal_flip {
++    }
++  }
++
++  max_number_of_boxes: 100
++  unpad_groundtruth_tensors: false
++  use_bfloat16: true  # works only on TPUs
++}
++
++train_input_reader: {
++  label_map_path: "labelmap.pbtxt"
++  tf_record_input_reader {
++    input_path: "train.record"
++  }
++}
++
++eval_config: {
++  metrics_set: "coco_detection_metrics"
++  use_moving_averages: false
++  batch_size: 1;
++}
++
++eval_input_reader: {
++  label_map_path: "labelmap.pbtxt"
++  shuffle: false
++  num_epochs: 1
++  tf_record_input_reader {
++    input_path: "test.record"
++  }
++}
+Index: .idea/indexLayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/indexLayout.xml b/.idea/indexLayout.xml
+new file mode 100644
+--- /dev/null	(date 1742592953609)
++++ b/.idea/indexLayout.xml	(date 1742592953609)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="UserContentModel">
++    <attachedFolders />
++    <explicitIncludes />
++    <explicitExcludes />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7b173d1e-4253-4cc1-b356-db4a2952b01a\" name=\"Changes\" comment=\"Added tensorflow2 project\">\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/TensorFlowProject.iml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/inspectionProfiles/profiles_settings.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/material_theme_project_new.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/misc.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/modules.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TensorFlowProject/.idea/vcs.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ThePirateHayConsole50Epocs/Program.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ThePirateHayConsole50Epocs/Program.cs\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 0\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2ub7mHN6Sv6c6wYYvOQlZTHaEUU\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"MachineLearning\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29\" />\r\n        <option value=\"bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7b173d1e-4253-4cc1-b356-db4a2952b01a\" name=\"Changes\" comment=\"\" />\r\n      <created>1742505579485</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1742505579485</updated>\r\n      <workItem from=\"1742505579486\" duration=\"302000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added tensorflow2 project\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added tensorflow2 project\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ebd650a8116f7f7a8d9990d0a5190b3a39cb1821)
++++ b/.idea/workspace.xml	(date 1742594608413)
+@@ -1,44 +1,153 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="7b173d1e-4253-4cc1-b356-db4a2952b01a" name="Changes" comment="Added tensorflow2 project">
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/TensorFlowProject.iml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/material_theme_project_new.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/misc.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/modules.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/TensorFlowProject/.idea/vcs.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ThePirateHayConsole50Epocs/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ThePirateHayConsole50Epocs/Program.cs" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/indexLayout.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/projectSettingsUpdater.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/detect_from_image.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/generate_tfrecord.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/labelmap.pbtxt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/model_downloader.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tf2/models/research/object_detection/xml_to_csv.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_74.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_77.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_81.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_84.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_87.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_91.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_93.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_94.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_95.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_97.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_98.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Aircraft_20Carrier_99.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Bulkers_18.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_10.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_14.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_18.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_2.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_20.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_24.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_27.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_28.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_5.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_6.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Container_20Ship_9.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_11.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_13.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_14.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_16.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_17.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_19.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_2.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_22.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_23.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_25.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_28.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Cruise_8.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_11.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_16.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_17.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_26.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_27.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/DDG_29.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/ThePirateHay/dataset/train/trainset/vott-json-export/Submarine_15.jpeg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/tf2/models" beforeDir="false" afterPath="$PROJECT_DIR$/tf2/models" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="ROOT_SYNC" value="DONT_SYNC" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 0
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "tobias-roy"
++  }
+ }]]></component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/tensorflow/models.git",
++    "accountId": "7a504a8f-74c7-4ba1-80ee-32fd173eaf85"
++  }
++}]]></component>
++  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 0
++}</component>
+   <component name="ProjectId" id="2ub7mHN6Sv6c6wYYvOQlZTHaEUU" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "Python.model_downloader.executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "MachineLearning",
+     "ignore.virus.scanning.warn.message": "true",
+     "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
++    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
++    "ts.external.directory.path": "C:\\Users\\tobia\\source\\repos\\H5\\AngularTensorflowJS\\ThePirateHayAngular\\node_modules\\typescript\\lib",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\tobia\source\repos\H5\tf2\models\research\object_detection" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="model_downloader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="H5" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf2/models/research/object_detection" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf2/models/research/object_detection/model_downloader.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -55,15 +164,31 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1742505579485</updated>
+-      <workItem from="1742505579486" duration="302000" />
++      <workItem from="1742505579486" duration="3179000" />
++      <workItem from="1742592954861" duration="1538000" />
++    </task>
++    <task id="LOCAL-00001" summary="Added tensorflow2 project">
++      <option name="closed" value="true" />
++      <created>1742505950380</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1742505950380</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
++  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+   <component name="VcsManagerConfiguration">
++    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+     <MESSAGE value="Added tensorflow2 project" />
+     <option name="LAST_COMMIT_MESSAGE" value="Added tensorflow2 project" />
+   </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/H5$model_downloader.coverage" NAME="model_downloader Coverage Results" MODIFIED="1742507915189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf2/models/research/object_detection" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: tf2/models/research/object_detection/generate_tfrecord.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/generate_tfrecord.py b/tf2/models/research/object_detection/generate_tfrecord.py
+new file mode 100644
+--- /dev/null	(date 1742570325796)
++++ b/tf2/models/research/object_detection/generate_tfrecord.py	(date 1742570325796)
+@@ -0,0 +1,118 @@
++from __future__ import division
++from __future__ import print_function
++from __future__ import absolute_import
++
++import os
++import io
++import pandas as pd
++
++from tensorflow.python.framework.versions import VERSION
++if VERSION >= "2.0.0a0":
++    import tensorflow.compat.v1 as tf
++else:
++    import tensorflow as tf
++
++from PIL import Image
++from object_detection.utils import dataset_util
++from collections import namedtuple, OrderedDict
++
++flags = tf.app.flags
++flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
++flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
++flags.DEFINE_string('image_dir', '', 'Path to images')
++FLAGS = flags.FLAGS
++
++
++''' 
++*************************************************************************
++Make sure to edit this method to match the labels you made with labelImg! n
++*************************************************************************
++'''
++def class_text_to_int(row_label):
++    if row_label == 'Aircraft carrier':
++        return 1
++    elif row_label == 'Destroyer':
++        return 2
++    elif row_label == 'Sailboat':
++        return 3
++    elif row_label == 'Pirate boat':
++        return 4
++    elif row_label == 'Bulker':
++        return 5
++    elif row_label == 'Uboat':
++        return 6
++    elif row_label == 'Container ship':
++        return 7
++    elif row_label == 'Cruise ship':
++        return 8
++    else:
++        return None
++
++
++def split(df, group):
++    data = namedtuple('data', ['filename', 'object'])
++    gb = df.groupby(group)
++    return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
++
++
++def create_tf_example(group, path):
++    with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
++        encoded_jpg = fid.read()
++    encoded_jpg_io = io.BytesIO(encoded_jpg)
++    image = Image.open(encoded_jpg_io)
++    width, height = image.size
++
++    filename = group.filename.encode('utf8')
++    image_format = b'jpg'
++    xmins = []
++    xmaxs = []
++    ymins = []
++    ymaxs = []
++    classes_text = []
++    classes = []
++
++    for index, row in group.object.iterrows():
++        xmins.append(row['xmin'] / width)
++        xmaxs.append(row['xmax'] / width)
++        ymins.append(row['ymin'] / height)
++        ymaxs.append(row['ymax'] / height)
++        classes_text.append(row['class'].encode('utf8'))
++        classes.append(class_text_to_int(row['class']))
++
++    tf_example = tf.train.Example(features=tf.train.Features(feature={
++        'image/height': dataset_util.int64_feature(height),
++        'image/width': dataset_util.int64_feature(width),
++        'image/filename': dataset_util.bytes_feature(filename),
++        'image/source_id': dataset_util.bytes_feature(filename),
++        'image/encoded': dataset_util.bytes_feature(encoded_jpg),
++        'image/format': dataset_util.bytes_feature(image_format),
++        'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
++        'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
++        'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
++        'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
++        'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
++        'image/object/class/label': dataset_util.int64_list_feature(classes),
++    }))
++    return tf_example
++
++
++def main(_):
++    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
++    path = os.path.join(FLAGS.image_dir)
++    examples = pd.read_csv(FLAGS.csv_input)
++    grouped = split(examples, 'filename')
++    for group in grouped:
++        tf_example = create_tf_example(group, path)
++        writer.write(tf_example.SerializeToString())
++
++    writer.close()
++    output_path = os.path.join(os.getcwd(), FLAGS.output_path)
++    print('Successfully created the TFRecords: {}'.format(output_path))
++
++
++if __name__ == '__main__':
++    tf.app.run()
++
++# commands:
++# python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
++# python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
+\ No newline at end of file
+Index: tf2/models/research/object_detection/model_downloader.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/model_downloader.py b/tf2/models/research/object_detection/model_downloader.py
+new file mode 100644
+--- /dev/null	(date 1742506765336)
++++ b/tf2/models/research/object_detection/model_downloader.py	(date 1742506765336)
+@@ -0,0 +1,7 @@
++import wget
++model_link = "http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz"
++wget.download(model_link)
++import tarfile
++tar = tarfile.open('faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz')
++tar.extractall('.')
++tar.close()
+\ No newline at end of file
+Index: tf2/models/research/object_detection/xml_to_csv.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/xml_to_csv.py b/tf2/models/research/object_detection/xml_to_csv.py
+new file mode 100644
+--- /dev/null	(date 1742557321373)
++++ b/tf2/models/research/object_detection/xml_to_csv.py	(date 1742557321373)
+@@ -0,0 +1,39 @@
++# based on https://github.com/datitran/raccoon_dataset/blob/master/xml_to_csv.py
++
++import os
++import glob
++import pandas as pd
++import xml.etree.ElementTree as ET
++
++
++def xml_to_csv(path):
++    xml_list = []
++    for xml_file in glob.glob(path + '/*.xml'):
++        tree = ET.parse(xml_file)
++        root = tree.getroot()
++        for member in root.findall('object'):
++            value = (root.find('filename').text,
++                     int(root.find('size')[0].text),
++                     int(root.find('size')[1].text),
++                     member[0].text,
++                     int(member[4][0].text),
++                     int(member[4][1].text),
++                     int(member[4][2].text),
++                     int(member[4][3].text)
++                     )
++            xml_list.append(value)
++    column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
++    xml_df = pd.DataFrame(xml_list, columns=column_name)
++    return xml_df
++
++
++def main():
++    for folder in ['train', 'test']:
++        image_path = os.path.join(os.getcwd(), ('images/' + folder))
++        xml_df = xml_to_csv(image_path)
++        xml_df.to_csv(('images/'+folder+'_labels.csv'), index=None)
++    print('Successfully converted xml to csv.')
++
++
++main()
++
+Index: tf2/models/research/object_detection/labelmap.pbtxt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tf2/models/research/object_detection/labelmap.pbtxt b/tf2/models/research/object_detection/labelmap.pbtxt
+new file mode 100644
+--- /dev/null	(date 1742573478110)
++++ b/tf2/models/research/object_detection/labelmap.pbtxt	(date 1742573478110)
+@@ -0,0 +1,32 @@
++item {
++    id: 1
++    name: 'Aircraft carrier'
++}
++item {
++    id: 2
++    name: 'Destroyer'
++}
++item {
++    id: 3
++    name: 'Sailboat'
++}
++item {
++    id: 4
++    name: 'Pirate boat'
++}
++item {
++    id: 5
++    name: 'Bulker'
++}
++item {
++    id: 6
++    name: 'Uboat'
++}
++item {
++    id: 7
++    name: 'Container ship'
++}
++item {
++    id: 8
++    name: 'Cruise ship'
++}
+\ No newline at end of file

@@ -59,7 +59,8 @@ export class CamComponent implements OnInit {
 
   async loadModel() {
     console.log('loadModel');
-    this.modelCOCOSSD = await cocoSSD.load();
+    // this.modelCOCOSSD = await cocoSSD.load();
+    this.modelCOCOSSD = await tf.loadGraphModel('http://127.0.0.1:8080/model/model.json');
     console.log('Model loaded starting detection');
     this.loading = false;
     console.log('Loading set to false');
