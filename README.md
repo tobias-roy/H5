@@ -14,6 +14,8 @@
 
 [2.2 Tensorflow 2 Local Training Guide](#Tensorflow-2-Local-Training-Guide)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.21 3rd-party Software installation](#3rd-party-Software-installation)
+
 [2.3 TensorflowJS Webcam Detection Guide](#Tensorflow)
 
 [2.4 TensorflowJS Still Image Detection Guide](#Tensorflow)
@@ -275,7 +277,297 @@ In your outputs folder you should now see a couple of sample images that have ob
 
 
 # Tensorflow 2 Local Training Guide
+This part of the guide will set you up for training a model locally using transfer learning.
 
+## 3rd-party Software installation
+- Download and install the latest version of [LabelImg](https://github.com/HumanSignal/labelImg/releases)
+
+Model training
+In order to train a model you need a prepared dataset.
+For the purpose of this guide i am trying to detect specific ships in still images and videofeeds.
+You should have atleast 200 pictures, more is preferable.
+
+When training a model the general rule of thumb for using a dataset is to do a 80 / 20 split, meaning that 80% of your images will be used for training and 20% will be used for validation testing.
+
+
+//Solve from here
+
+
+- Gather images for dataset
+- In your object_detection folder create a folder and name it 'images'
+- In 'images' create two subfolders one named 'test' and one named 'train'
+- Paste 80% of your dataset into the train folder and 20% into your test folder
+
+- If your dataset is divided into more categories, create subfolders in the train folder only and paste the corresponding images into that folder.
+
+- In your Anaconda environment install LabelImg run 'pip install labelimg'
+- Run LabelImg with the command 'labelImg.exe'
+- Press the Open Dir button and open the directory containing your dataset
+- Press the Change Save Dir button and change the save directory to the same one
+- Now it's time for the tedious part which is labeling your dataset.
+	Use the following keybinds for a bit of a better experience
+	W - Makes a new label
+	CTRL + S - Saves the current image configuration
+	A - Navigates back 1 image
+	D - Navigates forward 1 image.
+	Remember to save the image each time before going on to the next one.
+
+If you labelled your entire dataset in the same folder make sure to divide it by the 80/20 principle.
+Take 20 percent of the labeled images and XML files matching those and move them into the 'test' folder.
+
+- Great! Now create a file called 'xml_to_csv.py' in your object_detection folder.`
+- Paste the following script into the xml_to_csv.py file
+
+```
+import os
+import glob
+import pandas as pd
+import xml.etree.ElementTree as ET
+
+
+def xml_to_csv(path):
+    xml_list = []
+    for xml_file in glob.glob(path + '/*.xml'):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+        for member in root.findall('object'):
+            value = (root.find('filename').text,
+                     int(root.find('size')[0].text),
+                     int(root.find('size')[1].text),
+                     member[0].text,
+                     int(member[4][0].text),
+                     int(member[4][1].text),
+                     int(member[4][2].text),
+                     int(member[4][3].text)
+                     )
+            xml_list.append(value)
+    column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
+    xml_df = pd.DataFrame(xml_list, columns=column_name)
+    return xml_df
+
+
+def main():
+    for folder in ['train', 'test']:
+        image_path = os.path.join(os.getcwd(), ('images/' + folder))
+        xml_df = xml_to_csv(image_path)
+        xml_df.to_csv(('images/'+folder+'_labels.csv'), index=None)
+    print('Successfully converted xml to csv.')
+
+
+main()
+```
+
+- The script above will look for an images folder with the train and test subfolders and convert the xml files to csv files.
+- In your Anaconda Terminal execute the script the following command 'python xml_to_csv.py'
+- You should now se a confirmation message in your terminal and two new files should have appeared in your images folder.
+
+- Create a new file in the object_detection directory named 'generate_tfrecord.py'
+- Insert the following script
+```
+from __future__ import division
+from __future__ import print_function
+from __future__ import absolute_import
+
+import os
+import io
+import pandas as pd
+
+from tensorflow.python.framework.versions import VERSION
+if VERSION >= "2.0.0a0":
+    import tensorflow.compat.v1 as tf
+else:
+    import tensorflow as tf
+
+from PIL import Image
+from object_detection.utils import dataset_util
+from collections import namedtuple, OrderedDict
+
+flags = tf.app.flags
+flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
+flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
+flags.DEFINE_string('image_dir', '', 'Path to images')
+FLAGS = flags.FLAGS
+
+
+''' 
+*************************************************************************
+Make sure to edit this method to match the labels you made with labelImg! n
+*************************************************************************
+'''
+def class_text_to_int(row_label):
+    if row_label == 'Your_Label':
+        return 1
+    elif row_label == 'Your_Other_Label':
+        return 2
+    else:
+        return None
+
+
+def split(df, group):
+    data = namedtuple('data', ['filename', 'object'])
+    gb = df.groupby(group)
+    return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
+
+
+def create_tf_example(group, path):
+    with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
+        encoded_jpg = fid.read()
+    encoded_jpg_io = io.BytesIO(encoded_jpg)
+    image = Image.open(encoded_jpg_io)
+    width, height = image.size
+
+    filename = group.filename.encode('utf8')
+    image_format = b'jpg'
+    xmins = []
+    xmaxs = []
+    ymins = []
+    ymaxs = []
+    classes_text = []
+    classes = []
+
+    for index, row in group.object.iterrows():
+        xmins.append(row['xmin'] / width)
+        xmaxs.append(row['xmax'] / width)
+        ymins.append(row['ymin'] / height)
+        ymaxs.append(row['ymax'] / height)
+        classes_text.append(row['class'].encode('utf8'))
+        classes.append(class_text_to_int(row['class']))
+
+    tf_example = tf.train.Example(features=tf.train.Features(feature={
+        'image/height': dataset_util.int64_feature(height),
+        'image/width': dataset_util.int64_feature(width),
+        'image/filename': dataset_util.bytes_feature(filename),
+        'image/source_id': dataset_util.bytes_feature(filename),
+        'image/encoded': dataset_util.bytes_feature(encoded_jpg),
+        'image/format': dataset_util.bytes_feature(image_format),
+        'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
+        'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
+        'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
+        'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
+        'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
+        'image/object/class/label': dataset_util.int64_list_feature(classes),
+    }))
+    return tf_example
+
+
+def main(_):
+    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
+    path = os.path.join(FLAGS.image_dir)
+    examples = pd.read_csv(FLAGS.csv_input)
+    grouped = split(examples, 'filename')
+    for group in grouped:
+        tf_example = create_tf_example(group, path)
+        writer.write(tf_example.SerializeToString())
+
+    writer.close()
+    output_path = os.path.join(os.getcwd(), FLAGS.output_path)
+    print('Successfully created the TFRecords: {}'.format(output_path))
+
+
+if __name__ == '__main__':
+    tf.app.run()
+```
+
+- Open the file and edit the 'class_text_to_int' function to fit your dataset, add any labels you need.
+
+- To generate the test and training records run the two following commands from the object_detection directory
+
+python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
+python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
+
+- You should be prompted with a succesful message
+
+- From object_detection, navigate to configs/tf2 and find the configuration file for your model of choice.
+
+- Copy the configuration file at paste it in the object_detection folder
+
+- Open the configuration file in object_detection and get ready to define your model
+
+- Change the 'num_classes' parameter in the model to the amount of classes you have defined
+- Change the 'fine_tune_checkpoint' to the path of the ckpt-0.index file in your downloaded model folder.
+	In my case its 'research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/ckpt-0'
+	Make sure '/' are '/' and not '\'
+	Make sure to delete the .index fileextension from the path
+- Change the fine_tune_checkpoint_type to 'detection'
+- Change the batch_size in the train_config to a higher number like 64 if you have a CUDA GPU.
+	Change it to a lower number if you do not as it will use your CPU.
+	Recommended for CPU is to start as low as possible so try it out with 2 for starters.
+	
+- Change the num_steps of the train_config.
+	This is basicly the number of steps the model will use for training - try leaving it at default and monitor your training.
+	Change it higher or lower and compare the outputs. Too high a number can cause overtraining.
+
+- Change the input_path of the train_input_reader to the path of the train.record
+	ie. research/object_detection/train.record
+- Change the input path of the eval_input_reader to the path of the test.record
+	ie. research/object_detection/test.record
+	
+- Create a file in the object_detection directory named labelmap.pbtxt
+	In that file you need to create a label map which is a structure of the labels you used for your images.
+	The structure below needs to be created for as many or few labels you are using.
+	The id has to correspond to the return value of your generate_tfrecord.py file.
+	Change the label_X name to the name of your labels.
+```
+item {
+	id: 1
+	name: 'label_1'
+}
+item {
+	id: 2
+	name: 'label_2'
+}
+item {
+	id: 3
+	name: 'label_3'
+}
+```
+
+- Change the label_map_path of the the train_input_reader to your newly created labelmap.pbtxt
+	In my case its 'research/object_detection/labelmap.pbtxt'
+	
+- Change the label_map_path of the eval_input_reader to the same.
+
+- In the object_detection directory create a new folder called 'training' and add a subfolder with the name of the model you are using
+
+- Now we have everything we need to start training.
+
+- From the object_detection directory edit and run the following command to start training
+	'python model_main_tf2.py --pipeline_config_path=THE_PATH_OF_YOUR_CONFIG_FILE --model_dir=training --alsologtostderr'
+	
+	In my case the command looks like this:
+	'python model_main_tf2.py --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --model_dir=training/faster_rcnn_resnet50_v1_640x640 --alsologtostderr'
+	
+	The model_dir is where training checkpoints will be stored once training begins.
+	The aslologtostderr will log standard errors.
+	
+- When trying to do the step above i encountered an error multiple times relating to the formatting of
+the labelmap.pbtxt file. When you have the file open in an IDE such as PyCharm in the bottom hand right corner
+make sure that the Line Sperator is CR and the file encoding is UTF-8.
+
+- When the model is running open another Anaconda Prompt, activate the environment you're using and 
+navigate to the object_detection directory.
+- Run the following command to enable TensorBoard
+	'tensorboard --logdir=training\faster_rcnn_resnet50_v1_640x640\train'
+	The command above points to the train folder containing tfevents files.
+
+- Now we should export the inference graph. Run the command below to export it
+	'python exporter_main_v2.py --trained_checkpoint_dir=training/faster_rcnn_resnet50_v1_640x640 --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --output_directory inference_graph'
+	This will run the export script, use the checkpoints in the training folder, use the config that we made for the model and export it in the inferece_graph folder.
+
+- In order to use this model in Tensorflow.js we need to convert it.
+	Install Tensorflowjs in your Anaconda environment
+	'pip install tensorflowjs==3.19.0'
+	
+- Run the command below to convert our model
+	'tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/saved_model.pb inference_graph/saved_model/tfjsconvert'
+	
+//Upload STEP is missing
+
+- You should now have a saved model in your saved_model/tfjsconvert folder.
+- In order to use this model in TensorflowJS you have to upload the model.json and all the .bin files (Let's call them shards).
+- tf.loadModel() a Javascript function that loads the model uses FETCH and has to have a valid link to point to. It will then load the model.json
+and load all the shards of the model.
+- I upload mine to Github in a public repository and then point to the RAW path, but more on that in the next chapter.
 
 
 
