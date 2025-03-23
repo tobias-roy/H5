@@ -2,11 +2,17 @@
 
 [1. Case](#Case)
 
-[2. Prerequisites](#Prerequisites)
-
 [2.1 Tensorflow 2 Installation Guide](#Tensorflow-2-Installation-Guide)
 
-[2.2 Tensorflow 2 Local Training Guide](#Tensorflow)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.11 Software Installation](#Softwar-Installation)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.12 Setting up the project](#Setting-up-the-project)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.13 Setting up PyCharm](#Setting-up-PyCharm)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.14 Setting up a model for Transfer Learning](#Setting-up-a-model-for-Transfer-Learning)
+
+[2.2 Tensorflow 2 Local Training Guide](#Tensorflow-2-Local-Training-Guide)
 
 [2.3 TensorflowJS Webcam Detection Guide](#Tensorflow)
 
@@ -29,12 +35,14 @@ To help ships navigate in the waters we can implement an Early Warning System (E
 At the top of the ships a camera will be mounted that contionuously will rotate in a 360 degree rotation to constantly survey the waters.
 The videofeed will then be used by our object detection model to try and identify pirates.
 
-# Prerequisites
+
+# Tensorflow 2 Installation Guide
 This guide take any skill level into account, you can follow this as a complete beginner in ML with very basic computer skills.
 If you don't want to follow the guide and learn along there will be a TLDR as short as possible.
 It's very important that you install the specific version numbers in this guide to avoid package conflicts.
 
-### Tensorflow 2 Installation Guide
+## Software installation
+
 - Clone the tensorflow [models repository](https://github.com/tensorflow/models) into a project folder you want to continue from.
   ```
   gh repo clone tensorflow/models
@@ -83,7 +91,7 @@ That will run the setup
 - In your Anaconda prompt run ```python object_detection/builders/model_builder_tf2_test.py```
   This is a Tensorflow Test to see if everything is installed correctly so far.
 
-### Setting up PyCharm
+## Setting up PyCharm
 This step will vary depending on what IDE you are using but for PyCharm follow along.
 - In your explorer navigate to your *models* folder
 - Press SHIFT + Right Click and open the folder *As a project for PyCharm*
@@ -91,7 +99,7 @@ This step will vary depending on what IDE you are using but for PyCharm follow a
 - Press *Add New Interpreter* and then *Add Local Intepreter*
 - Press *Select Existing* then in the Type dropdown choose *Conda* then in the Environment dropdown choose the name of the environment you created earlier
 
-### Setting up a model for Transfer Learning
+## Setting up a model for Transfer Learning
 - Create a new directory in the *models/research/object_detection* folder and name it *outputs*
 - Create a new file in the *models/research/object_detection* folder and name it *model_downloader.py*
 - Create a new file in the *models/research/object_detection* folder and name it *detect_from_image.py*
@@ -264,6 +272,10 @@ What this command does is that it runs the detect_from_image python script with 
 	For more information of the [Common Objects in Context](https://cocodataset.org/#home) dataset visit the webpage.
 	
 In your outputs folder you should now see a couple of sample images that have object detection added to them.
+
+
+# Tensorflow 2 Local Training Guide
+
 
 
 
