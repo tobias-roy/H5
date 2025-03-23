@@ -4,7 +4,7 @@
 
 [2. Prerequisites](#Prerequisites)
 
-[2.1 Tensorflow 2 Installation Guide](#Tensorflow)
+[2.1 Tensorflow 2 Installation Guide](#Setting)
 
 [2.2 Tensorflow 2 Local Training Guide](#Tensorflow)
 
