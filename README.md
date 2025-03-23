@@ -1,63 +1,58 @@
-# 
-# Object Detection using ML.NET  
+# Object Detection using Tensorflow 2 and TensorflowJS in Angular19
 
-[1. Problem](#Problem)
+[1. Case](#Case)
 
-[2. Solution](#Solution)
+[2. Prerequisites](#Prerequisites)
 
-[3. Prerequisites](#Prerequisites)
+[2.1 Tensorflow 2 Installation Guide](#Tensorflow)
 
-[3.1 Tensorflow 2 Guide](#Tensorflow)
+[2.2 Tensorflow 2 Local Training Guide](#Tensorflow)
 
-[4. Dataset](#Dataset)
+[2.3 TensorflowJS Webcam Detection Guide](#Tensorflow)
 
-[5. Solution](#Solution)
+[2.4 TensorflowJS Still Image Detection Guide](#Tensorflow)
 
-[6. Metrics](#Metrics)
+[3. Dataset](#Dataset)
 
+[4. Solution](#Solution)
 
-## Problem
+[5. Metrics](#Metrics)
+
+[6. TLDR](#TLDR)
+
+# Case
 Sailing ships around the world you might be exposed to all kinds of danger, one in particulair is the threat of pirates. 
 Pirates are not exclusive to the horn of Africa, there is an ecually high risk in The Strait of Malacca and Gulf of Guinea.
 The M.O. of pirates is typicaly similair in regards to transportation, they tend to use small fast speed-boats. Hard to hit, easy to sail.
 
-## Solution
-In order to help ships 
+To help ships navigate in the waters we can implement an Early Warning System (EWS). This will help ships detect and identify possible threads.
+At the top of the ships a camera will be mounted that contionuously will rotate in a 360 degree rotation to constantly survey the waters.
+The videofeed will then be used by our object detection model to try and identify pirates.
 
-## Prerequisites
+# Prerequisites
+This guide take any skill level into account, you can follow this as a complete beginner in ML with very basic computer skills.
+If you don't want to follow the guide and learn along there will be a TLDR as short as possible.
+It's very important that you install the specific version numbers in this guide to avoid package conflicts.
 
-## Tensorflow
-Steps to get going with Tensorflow locally using Python 3.9:
+### Installing software
+- Clone the tensorflow [models repository](https://github.com/tensorflow/models) into a project folder you want to continue from.
+  ```
+  gh repo clone tensorflow/models
+  ```
 
-Prerequisites:
-- Clone the tensorflow models repository into a project folder you want to continue from
-	https://github.com/tensorflow/models
-
-- Download Protobuf for your platform
-	https://github.com/protocolbuffers/protobuf/releases
-	In my case its as of writing this protoc-21.10-win64
+- Install [Anaconda](https://www.anaconda.com/download/success) for managing the python environment
 	
-	Once downloaded store it somewhere you wont delete it (could be your Programs > Python folder
-	Goto: System Properties tab -> Advanced tab -> Click Environment Variables
-	Press "Path" in User variables -> Press Edit
-	Press "New" and add the path of your folder containing the protoc.exe file.
-	
-- Install Anaconda for hosting the python environment
-	https://www.anaconda.com/download/success
-	
-- Install PyCharm
-	https://www.jetbrains.com/pycharm/
+- Install [PyCharm](https://www.jetbrains.com/pycharm/) or another IDE with Python compatability
 
-- Open an Anaconda prompt
-	Create a new project with the command: 'conda create -n projectName python=3.9'
-	Activate the project: 'conda activate projectName'
-	Download protobuf as a package in your python environment: 'conda install protobuf=3.20.1'
-	Copy the directory path containing your models folder (tensorflow models from previous step)
-	In your Conda CMD navigate to the folder i.e 'cd C:\Users\tobia\source\repos\H5\PythonProject'
-	Then 'cd models/research'
-	
-- In your explorer navigate to the models > research folder in the tensorflow/models cloned repo.
-- Create a file named use_protobuf.py
+
+## Setting up the project
+- Open an Anaconda Prompt
+- Create a new environment ```conda create -n *YOUR-PROJECT-NAME* python=3.9```
+- Activate the project: ```conda activate projectName```
+- Download protobuf as a package in your environment ```conda install protobuf=3.20.1```
+- Copy the directory path to your tensorflow/models/research directory (models should be the cloned [models repository](https://github.com/tensorflow/models))
+- Navigate to the directory in your Anaconda Prompt ```cd C:\PATH\OF\YOUR\FOLDER\models\research```
+- Create a file named use_protobuf.py in *C:\PATH\OF\YOUR\FOLDER\models\research*
 - Insert the following script to the .py file
   
 ```
@@ -71,34 +66,37 @@ for file in os.listdir(directory):
 		os.system(protoc_path+" "+directory+"/"+file+" --python_out=.")
 ```
 
-- Run the script 'python use_protobuf.py object_detection/protos protoc'
-That will input the directory and use the command protoc to activate all the protobuf needed tools
+- Run the script in your Anaconda Prompt with the command ```python use_protobuf.py object_detection/protos protoc```
+This will activate all the protobuf necessary stuff
 
-- In your explorer navigate to models > research > object_detection > packages > tf2
-- Copy the setup.py file
-- Navigate back to models > research
-- Paste the setup.py file
+- In your explorer navigate to *models/research/object_detection/packages/tf2*
+- Copy the *setup.py* file
+- Navigate back to *models/research*
+- Paste the *setup.py* file
 
-- In Conda run 'python -m pip install .'
-That will look for a setup.py file to install
+- In your Anaconda prompt run ```python -m pip install .```
+That will run the setup
 
-- Install numpy 'conda install numpy=1.23.4'
+- In your Anaconda prompt run ```conda install numpy=1.23.4```
+  This will install Numpy
 
-- Test if everything is installed correctly 'python object_detection/builders/model_builder_tf2_test.py'
+- In your Anaconda prompt run ```python object_detection/builders/model_builder_tf2_test.py```
+  This is a Tensorflow Test to see if everything is installed correctly so far.
 
-If everything runs, congratulations! You now have Tensorflow2 running.
+### Setting up PyCharm
+This step will vary depending on what IDE you are using but for PyCharm follow along.
+- In your explorer navigate to your *models* folder
+- Press SHIFT + Right Click and open the folder *As a project for PyCharm*
+- Click the interpeter in the bottom right corner (The second field from the right)
+- Press *Add New Interpreter* and then *Add Local Intepreter*
+- Press *Select Existing* then in the Type dropdown choose *Conda* then in the Environment dropdown choose the name of the environment you created earlier
 
-The following is only relevant for PyCharm:
-- Open your projects root folder as a project for PyCharm
-- Click the interpeter in the bottom right corner -> Add new -> Select Local
-- Press select excisting -> Choose Conda -> Choose the name of your environment with TensorFlow2
+### Setting up a model for Transfer Learning
+- Create a new directory in the *models/research/object_detection* folder and name it *outputs*
+- Create a new file in the *models/research/object_detection* folder and name it *model_downloader.py*
+- Create a new file in the *models/research/object_detection* folder and name it *detect_from_image.py*
 
-- Create a new directory in the object_detection folder and name it 'outputs'
-- Create a new file in the object_detection folder and name it 'model_downloader.py'
-- Create a new file in the object_detection folder and name it 'detect_from_image.py'
-
-- Insert the following snippet into the mode_downloader.py file
-  
+- Insert the following script into the *model_downloader.py* file
 ```
 import wget
 model_link = "http://download.tensorflow.org/models/object_detection/tf2/20200711/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz"
@@ -108,9 +106,16 @@ tar = tarfile.open('faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.tar.gz')
 tar.extractall('.')
 tar.close()
 ```
+In case you get a red underline on wget you need to install it in your environment.
+- In your Anaconda prompt run ```pip install wget=3.2```
+
+The code above is pointing to the faster_rcnn_resnet50_v1_640x640_coco17_tpu.8 model. You can choose whatever Tensorflow 2 Object Detection model you would like to use.
+The [Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) containts a list of all models we can use.
+- Right click the name of the model you want and press *Copy Link*
+- Replace the model_link with the link you copied.
+- Make sure the tarfile.open has the correct .tar.gz filename correspoding to the name of the model you downloaded and want to use.
 
 - Insert the following snippet into the detect_from_image.py file
-
 ```
 import numpy as np
 import argparse
@@ -248,23 +253,17 @@ if __name__ == '__main__':
     run_inference(detection_model, category_index, args.image_path)
 ```
 
+- In your Anaconda Prompt make sure you're in the *models/research/object_detection/* folder
+- Run the model downloader script ```python model_downloader.py```
 
-- In the above codesnippet we download and extract the resnet50 model for object detection. This can be changed to any model you wish to use from here:
-	https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
+- Make sure the following command points to the model you just downloaded and then run
+- ```python detect_from_image.py -m faster_rcnn_resnet50_v1_640x640_coco17_tpu-8\saved_model -l data\mscoco_label_map.pbtxt -i test_images```
 
-- Run the model downloader script in your terminal (make sure you're in the same directory as the script)
-	'python model_downloader.py'
-
-
-- You should now be able to run the previously downloaded model for object detection, i used the Anaconda Prompt we set up earlier
-- Navigate to models > research > object detection
-- Run 'python detect_from_image.py -m faster_rcnn_resnet50_v1_640x640_coco17_tpu-8\saved_model -l data\mscoco_label_map.pbtxt -i test_images'
-	What this command does is that it runs the detect_from_image python script with the resnet model that we downloaded earlier, if you have 
-	another model make sure to addapt the model name in the commandline. It then tells the prompt to use the specific label map and then run it on the folder
-	test_images. This will create an output for us.
+What this command does is that it runs the detect_from_image python script with the model that we just downloaded.
+	It will use the pre-defined object labels in the *mscoco_label_map.pbtxt* which is a collection that most pretrained object detection models can use.
+	For more information of the [Common Objects in Context](https://cocodataset.org/#home) dataset visit the webpage.
 	
-- In your outputs folder you should now see images that have object detection added to them.
-
+In your outputs folder you should now see a couple of sample images that have object detection added to them.
 
 
 
