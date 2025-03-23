@@ -4,7 +4,7 @@
 
 [2. Prerequisites](#Prerequisites)
 
-[2.1 Tensorflow 2 Installation Guide](#Setting)
+[2.1 Tensorflow 2 Installation Guide](#Tensorflow-2-Installation-Guide)
 
 [2.2 Tensorflow 2 Local Training Guide](#Tensorflow)
 
@@ -34,7 +34,7 @@ This guide take any skill level into account, you can follow this as a complete 
 If you don't want to follow the guide and learn along there will be a TLDR as short as possible.
 It's very important that you install the specific version numbers in this guide to avoid package conflicts.
 
-### Installing software
+### Tensorflow 2 Installation Guide
 - Clone the tensorflow [models repository](https://github.com/tensorflow/models) into a project folder you want to continue from.
   ```
   gh repo clone tensorflow/models
