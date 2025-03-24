@@ -16,6 +16,16 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.21 3rd-party Software installation](#3rd-party-Software-installation)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.22 Preparing the Dataset](#Preparing-the-Dataset)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.23 Model configuration](#Model-configuration)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.24 Training the model](#Training-the-model)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.25 Tensorboard analytics](#Tensorboard-analytics)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.26 Error handling](#Error-handling)
+
 [2.3 TensorflowJS Webcam Detection Guide](#Tensorflow)
 
 [2.4 TensorflowJS Still Image Detection Guide](#Tensorflow)
@@ -281,42 +291,42 @@ This part of the guide will set you up for training a model locally using transf
 
 ## 3rd-party Software installation
 - Download and install the latest version of [LabelImg](https://github.com/HumanSignal/labelImg/releases)
-
-Model training
+  You can either do it from the link or in your Anaconda Environment usen this command
+	```
+  	pip install labelimg
+	```
+## Preparing the Dataset
 In order to train a model you need a prepared dataset.
 For the purpose of this guide i am trying to detect specific ships in still images and videofeeds.
 You should have atleast 200 pictures, more is preferable.
 
 When training a model the general rule of thumb for using a dataset is to do a 80 / 20 split, meaning that 80% of your images will be used for training and 20% will be used for validation testing.
 
+If you don't want to create your own dataset [Kaggle](https://www.kaggle.com/datasets) is a great source for large datasets.
 
-//Solve from here
+Gathering good data is a science of it's own and i will leave that up to you to figure out.
 
+- When you have gathered your dataset create a new directory in your object_detection folder and name it *images*
+- In *object_detection/images* create two subfolders one named *test* and one named *train*
+- Paste 80% of your dataset into the *object_detection/images/train* directory and 20% into *object_detection/images/test*
+- If your dataset is divided into more categories you can create subfolders in the *object_detection/images/train* directory for each category, but this is not a necessary step.
 
-- Gather images for dataset
-- In your object_detection folder create a folder and name it 'images'
-- In 'images' create two subfolders one named 'test' and one named 'train'
-- Paste 80% of your dataset into the train folder and 20% into your test folder
-
-- If your dataset is divided into more categories, create subfolders in the train folder only and paste the corresponding images into that folder.
-
-- In your Anaconda environment install LabelImg run 'pip install labelimg'
-- Run LabelImg with the command 'labelImg.exe'
-- Press the Open Dir button and open the directory containing your dataset
-- Press the Change Save Dir button and change the save directory to the same one
+- Open LabelImg from your desktop or with the command ```labelImg.exe```in your Anaconda Environment
+- Press the *Open Dir* button and open the *object_detection/images/train* directory
+- Press the *Change Save Dir* button and change the save directory to *object_detection/images/train*
 - Now it's time for the tedious part which is labeling your dataset.
 	Use the following keybinds for a bit of a better experience
-	W - Makes a new label
-	CTRL + S - Saves the current image configuration
-	A - Navigates back 1 image
-	D - Navigates forward 1 image.
-	Remember to save the image each time before going on to the next one.
+	**W** - Makes a new label bounding box to mark your object
+	**CTRL + S** - Saves the current image configuration
+	**A** - Navigates back 1 image
+	**D** - Navigates forward 1 image.
+	Remember to save the image each time before going on to the next one using **CTRL + S**
 
-If you labelled your entire dataset in the same folder make sure to divide it by the 80/20 principle.
-Take 20 percent of the labeled images and XML files matching those and move them into the 'test' folder.
+- Great! Now you are 80% of the way, go through the same process with the *object_detection/images/test* directory
+  Remember to set the *Save Directory* to *object_detection/images/test*
 
-- Great! Now create a file called 'xml_to_csv.py' in your object_detection folder.`
-- Paste the following script into the xml_to_csv.py file
+- Once done with labelling your dataset create a file called *xml_to_csv.py* in your the object_detection directory
+- Paste the following script into the *xml_to_csv.py* file
 
 ```
 import os
@@ -357,12 +367,15 @@ def main():
 main()
 ```
 
-- The script above will look for an images folder with the train and test subfolders and convert the xml files to csv files.
-- In your Anaconda Terminal execute the script the following command 'python xml_to_csv.py'
-- You should now se a confirmation message in your terminal and two new files should have appeared in your images folder.
+The script above will look for the *images/train* and *images/test* folders and convert the xml files to csv files.
 
-- Create a new file in the object_detection directory named 'generate_tfrecord.py'
-- Insert the following script
+- In your Anaconda Prompt execute the script by running ```python xml_to_csv.py```
+- 
+  You should now se a confirmation message in your terminal and two new files should have appeared in your images folder.
+
+- Create a new file in the object_detection directory named *generate_tfrecord.py*
+- Insert the following script into the *generate_tfrecord.py* file
+  
 ```
 from __future__ import division
 from __future__ import print_function
@@ -391,7 +404,7 @@ FLAGS = flags.FLAGS
 
 ''' 
 *************************************************************************
-Make sure to edit this method to match the labels you made with labelImg! n
+Make sure to edit this method to match the labels you made with labelImg!
 *************************************************************************
 '''
 def class_text_to_int(row_label):
@@ -468,45 +481,51 @@ if __name__ == '__main__':
     tf.app.run()
 ```
 
-- Open the file and edit the 'class_text_to_int' function to fit your dataset, add any labels you need.
+- Open the file and edit the *class_text_to_int* function to fit your dataset, add the names of the labels you used when labelling your images.
+  You can expand it just as you wish.
 
-- To generate the test and training records run the two following commands from the object_detection directory
+- In your Anaconda Prompt from the *object_detection* directory run the following two commands to generate the tfrecords
 
 python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
 python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
 
-- You should be prompted with a succesful message
+You should be prompted with a succesful message
 
-- From object_detection, navigate to configs/tf2 and find the configuration file for your model of choice.
+## Model configuration
 
-- Copy the configuration file at paste it in the object_detection folder
+- In the explorer navigate to *object_detection/configs/tf2* and find the configuration file matching the name of the model you are using
 
-- Open the configuration file in object_detection and get ready to define your model
+- Copy the configuration file at paste it in the *object_detection* folder
 
-- Change the 'num_classes' parameter in the model to the amount of classes you have defined
-- Change the 'fine_tune_checkpoint' to the path of the ckpt-0.index file in your downloaded model folder.
-	In my case its 'research/object_detection/faster_rcnn_resnet50_v1_640x640_coco17_tpu-8/checkpoint/ckpt-0'
+- Open the configuration file with an IDE or text editor
+
+- Change the *num_classes* parameter in the model to the amount of classes you have defined
+  
+- Change the *fine_tune_checkpoint* to the path of the ckpt-0.index file in your downloaded model folder
+	i.e *object_detection/YOUR_MODEL_FOLDER/checkpoint/ckpt-0*
 	Make sure '/' are '/' and not '\'
 	Make sure to delete the .index fileextension from the path
-- Change the fine_tune_checkpoint_type to 'detection'
-- Change the batch_size in the train_config to a higher number like 64 if you have a CUDA GPU.
-	Change it to a lower number if you do not as it will use your CPU.
+
+- Change the *fine_tune_checkpoint_type* to *detection*
+  
+- Change the *batch_size* in the *train_config* to a higher number like 64 if you have a CUDA compatible GPU.
+	Change it to a lower number if you do not as it will utilize your CPU.
 	Recommended for CPU is to start as low as possible so try it out with 2 for starters.
 	
-- Change the num_steps of the train_config.
+- Change the *num_steps* in the *train_config*
 	This is basicly the number of steps the model will use for training - try leaving it at default and monitor your training.
 	Change it higher or lower and compare the outputs. Too high a number can cause overtraining.
 
-- Change the input_path of the train_input_reader to the path of the train.record
-	ie. research/object_detection/train.record
-- Change the input path of the eval_input_reader to the path of the test.record
-	ie. research/object_detection/test.record
+- Change the *input_path* of the *train_input_reader* to the path of the *train.record*
+	ie. *research/object_detection/train.record*
+
+- Change the *input_path* of the *eval_input_reader* to the path of the test.record
+	ie. *research/object_detection/test.record*
 	
-- Create a file in the object_detection directory named labelmap.pbtxt
+- Create a file in the *object_detection* directory named *labelmap.pbtxt*
 	In that file you need to create a label map which is a structure of the labels you used for your images.
-	The structure below needs to be created for as many or few labels you are using.
-	The id has to correspond to the return value of your generate_tfrecord.py file.
-	Change the label_X name to the name of your labels.
+	**The id has to correspond to the return value of your *generate_tfrecord.py* file.**
+	Change the label_X name to the name of your labels and expand as needed.
 ```
 item {
 	id: 1
@@ -522,27 +541,28 @@ item {
 }
 ```
 
-- Change the label_map_path of the the train_input_reader to your newly created labelmap.pbtxt
-	In my case its 'research/object_detection/labelmap.pbtxt'
+- Change the *label_map_path* of the the *train_input_reader* to *research/object_detection/labelmap.pbtxt*
 	
-- Change the label_map_path of the eval_input_reader to the same.
+- Change the *label_map_path* of the *eval_input_reader* to *research/object_detection/labelmap.pbtxt*
 
-- In the object_detection directory create a new folder called 'training' and add a subfolder with the name of the model you are using
+- In the *object_detection* directory create a new directory and name it *training* add a subfolder with the name of the model you are using
 
-- Now we have everything we need to start training.
+## Training the model
 
-- From the object_detection directory edit and run the following command to start training
-	'python model_main_tf2.py --pipeline_config_path=THE_PATH_OF_YOUR_CONFIG_FILE --model_dir=training --alsologtostderr'
+- In your Anaconda Prompt, from the *object_detection* directory run the following command to start training
+	```python model_main_tf2.py --pipeline_config_path=THE_PATH_OF_YOUR_CONFIG_FILE --model_dir=training --alsologtostderr```
 	
 	In my case the command looks like this:
-	'python model_main_tf2.py --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --model_dir=training/faster_rcnn_resnet50_v1_640x640 --alsologtostderr'
+	```python model_main_tf2.py --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --model_dir=training/faster_rcnn_resnet50_v1_640x640 --alsologtostderr```
 	
-	The model_dir is where training checkpoints will be stored once training begins.
-	The aslologtostderr will log standard errors.
-	
-- When trying to do the step above i encountered an error multiple times relating to the formatting of
-the labelmap.pbtxt file. When you have the file open in an IDE such as PyCharm in the bottom hand right corner
-make sure that the Line Sperator is CR and the file encoding is UTF-8.
+	The *model_dir* is where training checkpoints will be stored once training begins.
+	The aslologtostderr command will log standard errors.
+
+- When the model is done training we can export and save the it for 
+  	```python exporter_main_v2.py --trained_checkpoint_dir=training/faster_rcnn_resnet50_v1_640x640 --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --output_directory inference_graph```
+	This will run the export script, use the checkpoints in the training folder, use the config that we made for the model and export it in the *object_detection/inferece_graph* folder.
+
+## Tensorboard analytics
 
 - When the model is running open another Anaconda Prompt, activate the environment you're using and 
 navigate to the object_detection directory.
@@ -550,9 +570,15 @@ navigate to the object_detection directory.
 	'tensorboard --logdir=training\faster_rcnn_resnet50_v1_640x640\train'
 	The command above points to the train folder containing tfevents files.
 
-- Now we should export the inference graph. Run the command below to export it
-	'python exporter_main_v2.py --trained_checkpoint_dir=training/faster_rcnn_resnet50_v1_640x640 --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --output_directory inference_graph'
-	This will run the export script, use the checkpoints in the training folder, use the config that we made for the model and export it in the inferece_graph folder.
+## Error handling
+
+- When trying to do the step above i encountered an error multiple times relating to the formatting of
+the labelmap.pbtxt file. When you have the file open in an IDE such as PyCharm in the bottom hand right corner
+make sure that the Line Sperator is CR and the file encoding is UTF-8.
+
+
+
+
 
 - In order to use this model in Tensorflow.js we need to convert it.
 	Install Tensorflowjs in your Anaconda environment
