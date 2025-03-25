@@ -26,17 +26,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.26 Error handling](#Error-handling)
 
-[2.3 TensorflowJS Webcam Detection Guide](#Tensorflow)
+## TODO
+[2.3 TensorflowJS Webcam Detection](#TensorflowJS-Webcam-Detection)
 
-[2.4 TensorflowJS Still Image Detection Guide](#Tensorflow)
-
-[3. Dataset](#Dataset)
-
-[4. Solution](#Solution)
-
-[5. Metrics](#Metrics)
-
-[6. TLDR](#TLDR)
 
 # Case
 Sailing ships around the world you might be exposed to all kinds of danger, one in particulair is the threat of pirates. 
@@ -558,56 +550,58 @@ item {
 	The *model_dir* is where training checkpoints will be stored once training begins.
 	The aslologtostderr command will log standard errors.
 
-- When the model is done training we can export and save the it for 
+- When the model is done training we can export and save the it for later use using this command
   	```python exporter_main_v2.py --trained_checkpoint_dir=training/faster_rcnn_resnet50_v1_640x640 --pipeline_config_path=faster_rcnn_resnet50_v1_640x640_coco17_tpu-8.config --output_directory inference_graph```
 	This will run the export script, use the checkpoints in the training folder, use the config that we made for the model and export it in the *object_detection/inferece_graph* folder.
 
 ## Tensorboard analytics
 
 - When the model is running open another Anaconda Prompt, activate the environment you're using and 
-navigate to the object_detection directory.
+navigate to the *object_detection* directory.
 - Run the following command to enable TensorBoard
-	'tensorboard --logdir=training\faster_rcnn_resnet50_v1_640x640\train'
+	```tensorboard --logdir=training\faster_rcnn_resnet50_v1_640x640\train```
 	The command above points to the train folder containing tfevents files.
 
 ## Error handling
 
-- When trying to do the step above i encountered an error multiple times relating to the formatting of
-the labelmap.pbtxt file. When you have the file open in an IDE such as PyCharm in the bottom hand right corner
+- The formatting of the labelmap.pbtxt file is very important. When you have the file open in an IDE such as PyCharm in the bottom hand right corner
 make sure that the Line Sperator is CR and the file encoding is UTF-8.
 
 
-
-
+# TensorflowJS Webcam Detection
 
 - In order to use this model in Tensorflow.js we need to convert it.
-	Install Tensorflowjs in your Anaconda environment
-	'pip install tensorflowjs==3.19.0'
-	
+Create a new Anaconda Environment
+Install Tensorflowjs in your Anaconda environment
+	```pip install tensorflowjs==3.19.0```
+
+- In your prompt navigate to the *object_detection* folder
+ 
 - Run the command below to convert our model
-	'tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/saved_model.pb inference_graph/saved_model/tfjsconvert'
-	
-//Upload STEP is missing
+	```tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/saved_model.pb inference_graph/saved_model/tfjsconvert```
+	This will create a new directory and a graph model which can be used in TensorflowJS in the *inference_graph/saved_model* directory
 
-- You should now have a saved model in your saved_model/tfjsconvert folder.
-- In order to use this model in TensorflowJS you have to upload the model.json and all the .bin files (Let's call them shards).
-- tf.loadModel() a Javascript function that loads the model uses FETCH and has to have a valid link to point to. It will then load the model.json
-and load all the shards of the model.
-- I upload mine to Github in a public repository and then point to the RAW path, but more on that in the next chapter.
+- In order to use this model in TensorflowJS you have to upload the model.json and all the .bin files (Let's call them shards)
+  tf.loadModel() a Javascript function that loads the model uses FETCH and has to have a valid link to point to.
+  I upload mine to Github in a public repository and then point to the RAW path, but more on that in the next chapter.
+  *https://raw.githubusercontent.com/tobias-roy/H5/refs/heads/MachineLearning/AngularTensorflowJS/model/ship-detector-resnet50/model.json*
 
 
 
-## FAQ
+# FAQ
 
-#### Is ParkingProject a fully functioning console application?
+#### The difference in Layer and Graph models
+1. LayersModel can only be imported from tf.keras or keras HDF5 format model types. GraphModels can be imported from either the aforementioned model types, or TensorFlow SavedModels.
 
-Absolutely yes.
+2. LayersModels support further training in JavaScript (through its fit() method). GraphModel supports only inference.
 
-#### Can i use it for anything?
+3. GraphModel usually gives you higher inference speed (10-20%) than LayersModel, due to its graph optimization, which is possible thanks to the inference-only support.
 
-Absolutely not.
+[Source Shanqing Cai](https://stackoverflow.com/a/59341012)
 
 
 ## Authors
 
 - [@tobias-roy](https://github.com/tobias-roy)
+
+  I created this guide with inspiration from Ben Greenfield [Link to his github](https://github.com/BenGreenfield825).
