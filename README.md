@@ -1,4 +1,4 @@
-# Object Detection using Tensorflow 2 and TensorflowJS in Angular19
+# Object Detection using Tensorflow 2, Transfer Learning and TensorflowJS in Angular19
 
 [1. Case](#Case)
 
