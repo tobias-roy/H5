@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b173d1e-4253-4cc1-b356-db4a2952b01a" name="Changes" comment="What" />
+    <list default="true" id="7b173d1e-4253-4cc1-b356-db4a2952b01a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +23,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/tf2/models" value="master" />
+        <entry key="$PROJECT_DIR$" value="MachineLearning" />
+        <entry key="$PROJECT_DIR$/tf2/models" value="SubModel" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/tf2/models" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -34,7 +38,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/tensorflow/models.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/tobias-roy/H5&quot;,
     &quot;accountId&quot;: &quot;7a504a8f-74c7-4ba1-80ee-32fd173eaf85&quot;
   }
 }</component>
@@ -43,7 +47,7 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2ub7mHN6Sv6c6wYYvOQlZTHaEUU" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -53,11 +57,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Python.model_downloader.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ResnetV2",
+    "git-widget-placeholder": "MachineLearning",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -66,7 +71,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "ts.external.directory.path": "C:\\Users\\tobia\\source\\repos\\H5\\AngularTensorflowJS\\ThePirateHayAngular\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -100,6 +105,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.model_downloader" />
+        <item itemvalue="Python.model_downloader" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -119,7 +130,8 @@
       <updated>1742505579485</updated>
       <workItem from="1742505579486" duration="3179000" />
       <workItem from="1742592954861" duration="4133000" />
-      <workItem from="1742976085938" duration="13841000" />
+      <workItem from="1742976085938" duration="14933000" />
+      <workItem from="1742993092042" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="Added tensorflow2 project">
       <option name="closed" value="true" />
@@ -169,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742991816413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="whatever">
+      <option name="closed" value="true" />
+      <created>1742992541318</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742992541318</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +201,9 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/tf2/models" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added tensorflow2 project" />
     <MESSAGE value="A lot of changes and stuff" />
@@ -189,7 +212,8 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Too muchh" />
     <MESSAGE value="What" />
-    <option name="LAST_COMMIT_MESSAGE" value="What" />
+    <MESSAGE value="whatever" />
+    <option name="LAST_COMMIT_MESSAGE" value="whatever" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/H5$model_downloader.coverage" NAME="model_downloader Coverage Results" MODIFIED="1742507915189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tf2/models/research/object_detection" />
