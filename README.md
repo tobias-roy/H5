@@ -578,8 +578,10 @@ Install Tensorflowjs in your Anaconda environment
 - In your prompt navigate to the *object_detection* folder
  
 - Run the command below to convert our model
-	```tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/saved_model.pb inference_graph/saved_model/tfjsconvert```
-	This will create a new directory and a graph model which can be used in TensorflowJS in the *inference_graph/saved_model* directory
+
+```tensorflowjs_converter --input_format=tf_saved_model --output_format=tfjs_graph_model inference_graph/saved_model/saved_model.pb inference_graph/saved_model/tfjsconvert```
+	
+ This will create a new directory and a graph model which can be used in TensorflowJS in the *inference_graph/saved_model* directory
 
 - In order to use this model in TensorflowJS you have to upload the model.json and all the .bin files (Let's call them shards)
   tf.loadModel() a Javascript function that loads the model uses FETCH and has to have a valid link to point to.
