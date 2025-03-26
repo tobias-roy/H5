@@ -571,9 +571,13 @@ make sure that the Line Sperator is CR and the file encoding is UTF-8.
 # TensorflowJS Webcam Detection
 
 - In order to use this model in Tensorflow.js we need to convert it.
-Create a new Anaconda Environment
+Create a new Anaconda Environment with another version of python
+```conda create -n tfjsconverter python=3.6.8```
+Activate the environment
+```activate tfjsconverter```
+
 Install Tensorflowjs in your Anaconda environment
-	```pip install tensorflowjs==3.19.0```
+	```pip install tensorflowjs[wizard]```
 
 - In your prompt navigate to the *object_detection* folder
  
